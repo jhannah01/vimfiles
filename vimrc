@@ -1,4 +1,14 @@
+call pathogen#infect()
+syntax on
+filetype plugin indent on
+
 colorscheme slate
+set background=dark
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"colorscheme solarized
 
 set bg=dark
 set nocp
@@ -14,21 +24,24 @@ set hidden
 set undolevels=1000
 set wildignore=*.swp,*.pyc,*.pyo
 set title
-set visualbell
 set noerrorbells
 set mouse=a
 set showcmd
-
-call pathogen#infect()
-syntax on
-filetype plugin indent on
+set foldmethod=indent
+set foldlevel=99
 
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 
-autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 omnifunc=pysmell#Complete
-autocmd FileType python set complete+=k/opt/code/python/.pydiction iskeyword+=.,( 
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 omnifunc=pysmell#Complete
+"autocmd FileType python set complete+=k/opt/code/python/.pydiction iskeyword+=.,( 
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
+let g:tagbar_usearrows = 1
+
+nnoremap <leader>l :TagbarToggle<CR>
 
 "function! Smart_TabComplete()
 "  let line = getline('.')                         " current line
@@ -60,7 +73,7 @@ set pastetoggle=<F11>
 nmap <C-s><C-x> :ScreenSend<CR>
 nmap <C-s><C-q> :ScreenQuit<CR>
 "nmap <C-s><C-p> :IPython<CR>
-inoremap <C-space> <C-x><C-o>
+"inoremap <C-space> <C-x><C-o>
 
 if(exists("$HOME/.vim/neosetup.vim"))
     source $HOME/.vim/neosetup.vim
