@@ -28,3 +28,9 @@
 [submodule "bundle/vim-togglemouse"]
 	path = bundle/vim-togglemouse
 	url = https://github.com/nvie/vim-togglemouse.git
+[submodule "bundle/tasklist-pathogen"]
+	path = bundle/tasklist-pathogen
+	url = https://github.com/superjudge/tasklist-pathogen.git
+[submodule "bundle/vimpdb"]
+	path = bundle/vimpdb
+	url = https://github.com/gotcha/vimpdb.git
