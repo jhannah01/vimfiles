@@ -40,7 +40,7 @@ let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
 let g:tagbar_usearrows = 1
-
+set tags+=~/.tags
 nnoremap <leader>l :TagbarToggle<CR>
 
 "function! Smart_TabComplete()
