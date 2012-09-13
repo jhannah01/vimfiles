@@ -3,7 +3,13 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 
-colorscheme elflord
+"colorscheme slate
+set background=dark
+"let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+colorscheme solarized
 
 set background=dark
 set nocp
@@ -90,6 +96,6 @@ nmap <C-s><C-q> :ScreenQuit<CR>
 nmap <C-s><C-p> :IPython<CR>
 "inoremap <C-space> <C-x><C-o>
 
-"if (exists("$HOME/.vim/neosetup.vim"))
-"    source $HOME/.vim/neosetup.vim
-"endif
+if (exists("~/.vim/neosetup.vim"))
+    source ~/.vim/neosetup.vim
+endif
