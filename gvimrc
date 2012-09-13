@@ -1,4 +1,4 @@
-set columns=130
-set lines=40
-set guifont="Liberation Mono 10"
+set columns=120
+set lines=35
+set guifont=Liberation\ Mono\ 9
 

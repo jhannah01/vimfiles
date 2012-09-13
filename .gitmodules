@@ -43,9 +43,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
-[submodule "bundle/solarized"]
-	path = bundle/solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-css-color"]
 	path = bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
@@ -55,3 +52,18 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "bndle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+    url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/sudo.vim"]
+	path = bundle/sudo.vim
+	url = https://github.com/vim-scripts/sudo.vim
+[submodule "sudo.vim"]
+	path = sudo.vim
+	url = ./bundle/sudo.vim
+[submodule "bundle/vim-jde"]
+	path = bundle/vim-jde
+	url = https://github.com/vim-scripts/Vim-JDE.git
+[submodule "bundle/vim-javacomplete"]
+	path = bundle/vim-javacomplete
+	url = https://github.com/vim-scripts/javacomplete.git

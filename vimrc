@@ -1,16 +1,11 @@
 call pathogen#infect()
+
 syntax on
 filetype plugin indent on
 
-colorscheme slate
-set background=dark
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"colorscheme solarized
+colorscheme elflord
 
-set bg=dark
+set background=dark
 set nocp
 set ts=4
 set sw=4
@@ -32,6 +27,19 @@ set foldlevel=99
 
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
+
+let g:pydiction_location = "$HOME/.vim/pydiction/complete-dict"
+let g:pydiction_menu_height = 20
+
+" Supertab settings
+" supertab + eclim == java win
+
+let g:SuperTabDefaultCompletionTypeDiscovery = [
+\ "&completefunc:<c-x><c-u>",
+\ "&omnifunc:<c-x><c-o>",
+\ ]
+
+let g:SuperTabLongestHighlight = 1
 
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 omnifunc=pysmell#Complete
@@ -69,6 +77,8 @@ function! Smart_TabComplete()
   endif
 endfunction
 
+"inoremap <tab> <c-r>=Smart_TabComplete()<CR>
+
 map <F10> :set paste<CR>
 map <F11> :set nopaste<CR>
 imap <F10> <C-O>:set paste<CR>
@@ -78,8 +88,8 @@ set pastetoggle=<F11>
 nmap <C-s><C-x> :ScreenSend<CR>
 nmap <C-s><C-q> :ScreenQuit<CR>
 nmap <C-s><C-p> :IPython<CR>
-inoremap <C-space> <C-x><C-o>
+"inoremap <C-space> <C-x><C-o>
 
-if (exists("$HOME/.vim/neosetup.vim"))
-    source $HOME/.vim/neosetup.vim
-endif
+"if (exists("$HOME/.vim/neosetup.vim"))
+"    source $HOME/.vim/neosetup.vim
+"endif
