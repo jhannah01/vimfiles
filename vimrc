@@ -4,13 +4,13 @@ syntax on
 filetype plugin indent on
 
 "colorscheme slate
-set background=dark
-"let g:solarized_termtrans=1
-let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_termcolors=64
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 colorscheme solarized
 
+set backspace=indent,eol,start
 set background=dark
 set nocp
 set ts=4
@@ -34,7 +34,7 @@ set foldlevel=99
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 
-let g:pydiction_location = "$HOME/.vim/pydiction/complete-dict"
+let g:pydiction_location = "$HOME/vimfiles/pydiction/complete-dict"
 let g:pydiction_menu_height = 20
 
 " Supertab settings
@@ -54,10 +54,8 @@ set completeopt=menuone,longest,preview
 
 let g:tagbar_usearrows = 1
 
-set tags+=/opt/code/.tags
-
-if (exists("~/.tags"))
-    set tags+=~/.tags
+if (exists("~/_tags"))
+    set tags+=~/_tags
 endif
 
 nnoremap <leader>l :TagbarToggle<CR>
@@ -96,6 +94,6 @@ nmap <C-s><C-q> :ScreenQuit<CR>
 nmap <C-s><C-p> :IPython<CR>
 "inoremap <C-space> <C-x><C-o>
 
-if (exists("~/.vim/neosetup.vim"))
-    source ~/.vim/neosetup.vim
+if (exists("~/vimfiles/neosetup.vim"))
+    source ~/vimfiles/neosetup.vim
 endif
