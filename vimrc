@@ -1,15 +1,27 @@
-call pathogen#infect()
 
-syntax on
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'vim-scripts/pythoncomplete'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+
 filetype plugin indent on
+syntax on
+"call pathogen#infect()
+"call pathogen#runtime_append_all_bundles("vimpyre")
 
-"colorscheme slate
+colorscheme elflord
 set background=dark
 "let g:solarized_termtrans=1
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
-colorscheme solarized
+"colorscheme solarized
 
 set background=dark
 set nocp
@@ -47,10 +59,10 @@ let g:SuperTabDefaultCompletionTypeDiscovery = [
 
 let g:SuperTabLongestHighlight = 1
 
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 omnifunc=pysmell#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete complete+=k/$HOME/.vim/pydiction iskeyword+=.,(
+"autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 omnifunc=pysmell#Complete
 let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview
+set completeopt=menu,longest,preview
 
 let g:tagbar_usearrows = 1
 
@@ -95,7 +107,3 @@ nmap <C-s><C-x> :ScreenSend<CR>
 nmap <C-s><C-q> :ScreenQuit<CR>
 nmap <C-s><C-p> :IPython<CR>
 "inoremap <C-space> <C-x><C-o>
-
-if (exists("~/.vim/neosetup.vim"))
-    source ~/.vim/neosetup.vim
-endif
