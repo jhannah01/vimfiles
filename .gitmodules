@@ -1,63 +1,57 @@
-[submodule "bundle/vim-ipython"]
-	path = bundle/vim-ipython
-	url = https://github.com/ivanov/vim-ipython.git
-[submodule "bundle/neocomplcache"]
-	path = bundle/neocomplcache
-	url = https://github.com/Shougo/neocomplcache.git
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/taglist.vim"]
-	path = bundle/taglist.vim
-	url = https://github.com/vim-scripts/taglist.vim.git
-[submodule "bundle/vim-fugitive"]
-	path = bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule "bundle/vim-git"]
-	path = bundle/vim-git
-	url = https://github.com/tpope/vim-git.git
-[submodule "bundle/vim-slime"]
-	path = bundle/vim-slime
-	url = https://github.com/jpalardy/vim-slime.git
-[submodule "bundle/vim-togglemouse"]
-	path = bundle/vim-togglemouse
-	url = https://github.com/nvie/vim-togglemouse.git
-[submodule "bundle/tasklist-pathogen"]
-	path = bundle/tasklist-pathogen
-	url = https://github.com/superjudge/tasklist-pathogen.git
-[submodule "bundle/vimpdb"]
-	path = bundle/vimpdb
-	url = https://github.com/gotcha/vimpdb.git
-[submodule "bundle/pydoc"]
-	path = bundle/pydoc
-	url = https://github.com/fs111/pydoc.vim.git
-[submodule "bundle/undotree"]
-	path = bundle/undotree
-	url = https://github.com/mbbill/undotree.git
-[submodule "bundle/tagbar"]
-	path = bundle/tagbar
-	url = https://github.com/majutsushi/tagbar
-[submodule "bundle/vim-css-color"]
-	path = bundle/vim-css-color
-	url = https://github.com/ap/vim-css-color.git
-[submodule "bundle/better-css-syntax"]
-	path = bundle/better-css-syntax
-	url = https://github.com/vim-scripts/Better-CSS-Syntax-for-Vim.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "bndle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-    url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/vim-javacomplete"]
-    path = bundle/vim-javacomplete
-    url = https://github.com/vim-scripts/javacomplete.git
 [submodule "bundle/vundle"]
-	path = bundle/vundle
+    path = bundle/vundle
 	url = https://github.com/gmarik/vundle.git
+[submodule "bundle/vim-misc"]
+    path = bundle/vim-misc
+    url = https://github.com/xolox/vim-misc.git
+[submodule "bundle/vim-fugitive"]
+    path = bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/bundle/vim-easymotion"]
+    path = bundle/vim-easymotion
+    url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/YouCompleteMe"]
+    path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/syntastic"]
+    path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/Command-T"]
+    path = bundle/Command-T
+    url = https://github.com/wincent/Command-T.git
+[submodule "bundle/vim-easytags"]
+    path = bundle/vim-easytags
+    url = https://github.com/xolox/vim-easytags.git
+[submodule "bundle/python-syntax"]
+    path = bundle/python-syntax
+    url = https://github.com/hdima/python-syntax.git
+[submodule "bundle/vim-virtualenv"]
+    path = bundle/vim-virtualenv
+    url = https://github.com/jmcantrell/vim-virtualenv.git
+[submodule "bundle/fisa-vim-config"]
+    path = bundle/fisa-vim-config
+    url = https://github.com/fisadev/fisa-vim-config.git
+[submodule "bundle/python_ifold"]
+    path = bundle/python_ifold
+    url = https://github.com/vim-scripts/python_ifold.git
+[submodule "bundle/pydoc.vim"]
+    path = bundle/pydoc.vim
+    url = https://github.com/vim-scripts/pydoc.vim.git
+[submodule "bundle/vim-git"]
+    path = bundle/vim-git
+	url = https://github.com/tpope/vim-git.git
+[submodule "bundle/vim-ipython"]
+    path = bundle/vim-ipython
+	url = https://github.com/ivanov/vim-ipython.git
+[submodule "bundle/vim-slime"]
+    path = bundle/vim-slime
+	url = https://github.com/jpalardy/vim-slime.git
+[submodule "bundle/undotree"]
+    path = bundle/undotree
+    url = https://github.com/mbbill/undotree.git
+[submodule "bundle/vim-surround"]
+    path = bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/vimpdb"]
+    path = bundle/vimpdb
+	url = https://github.com/gotcha/vimpdb.git
