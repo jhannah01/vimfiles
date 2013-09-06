@@ -54,4 +54,10 @@
 	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle/vimpdb"]
     path = bundle/vimpdb
-	url = https://github.com/gotcha/vimpdb.git
+    url = https://github.com/gotcha/vimpdb.git
+[submodule "bundle/httplog"]
+    path = bundle/httplog
+    url = https://github.com/vim-scripts/httplog.git
+[submodule "bundle/vim-syntax-apache"]
+    path = bundle/vim-syntax-apache
+    url = https://github.com/vim-scripts/vim-syntax-apache.git
