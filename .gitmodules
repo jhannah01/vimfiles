@@ -60,4 +60,4 @@
     url = https://github.com/vim-scripts/httplog.git
 [submodule "bundle/vim-syntax-apache"]
     path = bundle/vim-syntax-apache
-    url = https://github.com/vim-scripts/vim-syntax-apache.git
+    url = https://github.com/apeschel/vim-syntax-apache.git
