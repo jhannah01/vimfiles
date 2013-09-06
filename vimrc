@@ -1,4 +1,5 @@
 filetype off
+set updatetime=4000
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -24,6 +25,9 @@ Bundle 'jpalardy/vim-slime'
 Bundle 'mbbill/undotree'
 Bundle 'tpope/vim-surround'
 Bundle 'gotcha/vimpdb'
+Bundle 'Rykka/riv.vim'
+Bundle 'httplog'
+Bundle 'apeschel/vim-syntax-apache'
 
 filetype plugin indent on
 syntax on
@@ -56,9 +60,9 @@ let g:slime_paste_file = "$HOME/.slime_paste"
 let g:pydiction_location = "$HOME/.vim/pydiction/complete-dict"
 let g:pydiction_menu_height = 20
 
-autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+let g:easytags_updatetime_min=4000
 
-set updatetime=4000
+autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 if (exists("/opt/code/.tags"))
     set tags+=/opt/code/.tags
