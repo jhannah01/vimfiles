@@ -54,8 +54,8 @@ set completeopt=menuone,longest,preview
 
 let g:tagbar_usearrows = 1
 
-if (exists("~/_tags"))
-    set tags+=~/_tags
+if (exists("$HOME/_tags"))
+    set tags+=$HOME/_tags
 endif
 
 nnoremap <leader>l :TagbarToggle<CR>
@@ -93,7 +93,3 @@ nmap <C-s><C-x> :ScreenSend<CR>
 nmap <C-s><C-q> :ScreenQuit<CR>
 nmap <C-s><C-p> :IPython<CR>
 "inoremap <C-space> <C-x><C-o>
-
-if (exists("~/vimfiles/neosetup.vim"))
-    source ~/vimfiles/neosetup.vim
-endif

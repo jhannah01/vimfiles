@@ -54,13 +54,16 @@
 	url = https://github.com/tpope/vim-surround.git
 [submodule "bndle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
-    url = https://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-javacomplete"]
-    path = bundle/vim-javacomplete
-    url = https://github.com/vim-scripts/javacomplete.git
+	path = bundle/vim-javacomplete
+	url = https://github.com/vim-scripts/javacomplete.git
 [submodule "bundle/javacomplete"]
 	path = bundle/javacomplete
 	url = https://github.com/vim-scripts/javacomplete.git
 [submodule "bundle/vim-gradle"]
 	path = bundle/vim-gradle
 	url = https://github.com/tfnico/vim-gradle.git
+[submodule "bundle\\YouCompleteMe"]
+	path = bundle\\YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
