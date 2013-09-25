@@ -23,8 +23,7 @@ if (exists("$HOME/.vim/bundle/vundle"))
     Bundle 'mbbill/undotree'
     Bundle 'tpope/vim-surround'
     Bundle 'gotcha/vimpdb'
-    Bundle 'httplog'
-    Bundle 'apeschel/vim-syntax-apache'
+    Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 endif
 
 filetype plugin indent on
@@ -56,7 +55,7 @@ set foldlevel=99
 "let g:pydiction_menu_height = 20
 
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
-
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
