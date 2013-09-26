@@ -24,6 +24,8 @@ if (exists("$HOME/.vim/bundle/vundle"))
     Bundle 'tpope/vim-surround'
     Bundle 'gotcha/vimpdb'
     Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+    Bundle 'gregsexton/MatchTag'
+    Bundle 'msanders/snipmate.vim'
 endif
 
 filetype plugin indent on
