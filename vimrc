@@ -9,7 +9,7 @@ if (exists("$HOME/.vim/bundle/vundle"))
     Bundle 'xolox/vim-misc'
     Bundle 'tpope/vim-fugitive'
     Bundle 'Lokaltog/vim-easymotion'
-    Bundle 'Valloric/YouCompleteMe'
+    "Bundle 'Valloric/YouCompleteMe'
     Bundle 'wincent/Command-T'
     "Bundle 'xolox/vim-easytags'
     Bundle 'hdima/python-syntax'
@@ -26,6 +26,7 @@ if (exists("$HOME/.vim/bundle/vundle"))
     Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
     Bundle 'gregsexton/MatchTag'
     Bundle 'msanders/snipmate.vim'
+    Bundle 'jamessan/vim-gnupg'
 endif
 
 filetype plugin indent on
