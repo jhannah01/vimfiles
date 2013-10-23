@@ -11,9 +11,8 @@ if (exists("$HOME/.vim/bundle/vundle"))
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'Valloric/YouCompleteMe'
     Bundle 'wincent/Command-T'
-    "Bundle 'xolox/vim-easytags'
     Bundle 'hdima/python-syntax'
-    Bundle 'jmcantrell/vim-virtualenv'
+    "Bundle 'jmcantrell/vim-virtualenv'
     Bundle 'fisadev/fisa-vim-config'
     Bundle 'vim-scripts/python_ifold'
     "Bundle 'vim-scripts/pydoc.vim'
@@ -23,9 +22,9 @@ if (exists("$HOME/.vim/bundle/vundle"))
     Bundle 'mbbill/undotree'
     Bundle 'tpope/vim-surround'
     Bundle 'gotcha/vimpdb'
-    Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+    "Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
     Bundle 'gregsexton/MatchTag'
-    Bundle 'msanders/snipmate.vim'
+    "Bundle 'msanders/snipmate.vim'
 endif
 
 filetype plugin indent on
