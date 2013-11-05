@@ -25,6 +25,7 @@ if (exists("$HOME/.vim/bundle/vundle"))
     "Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
     Bundle 'gregsexton/MatchTag'
     "Bundle 'msanders/snipmate.vim'
+    Bundle 'othree/html5.vim'
 endif
 
 filetype plugin indent on
@@ -51,6 +52,7 @@ set mouse=a
 set showcmd
 set foldmethod=indent
 set foldlevel=99
+set backspace=indent,eol,start
 
 "let g:pydiction_location = "$HOME/.vim/pydiction/complete-dict"
 "let g:pydiction_menu_height = 20
