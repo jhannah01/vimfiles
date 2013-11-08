@@ -1,7 +1,6 @@
 .netrwhist
-*.pyc
-*.pyo
-.*.swp
-*.*swo
+*.py[co]
+*.sw[po]
+*~
 
 .local/

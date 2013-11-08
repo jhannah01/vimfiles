@@ -1,15 +1,55 @@
-call pathogen#infect()
+filetype off
 
-syntax on
+if(!exists("vimhome"))
+    if (exists("$HOME/vim/vimrc"))
+        let g:vimhome = $HOME.'/vim'
+    elseif (exists("$HOME/home/vim/vimrc"))
+        let g:vimhome = $HOME.'/home/vim'
+    endif
+endif
+
+if (exists(g:vimhome.'/bundle/vundle'))
+    set &rtp += vundlepath
+    call vundle#rc(g:vimhome.'/bundle')
+
+    Bundle 'gmarik/vundle'
+    Bundle 'scrooloose/syntastic'
+    Bundle 'xolox/vim-misc'
+    Bundle 'tpope/vim-fugitive'
+    Bundle 'Lokaltog/vim-easymotion'
+    Bundle 'Valloric/YouCompleteMe'
+    Bundle 'wincent/Command-T'
+    "Bundle 'xolox/vim-easytags'
+    Bundle 'hdima/python-syntax'
+    Bundle 'jmcantrell/vim-virtualenv'
+    Bundle 'fisadev/fisa-vim-config'
+    Bundle 'vim-scripts/python_ifold'
+    "Bundle 'vim-scripts/pydoc.vim'
+    Bundle 'tpope/vim-git'
+    Bundle 'vim-scripts/vim-ipython'
+    "Bundle 'jpalardy/vim-slime'
+    Bundle 'mbbill/undotree'
+    Bundle 'tpope/vim-surround'
+    Bundle 'gotcha/vimpdb'
+    Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+    Bundle 'gregsexton/MatchTag'
+    Bundle 'msanders/snipmate.vim'
+endif
+
 filetype plugin indent on
+syntax on
 
-"colorscheme slate
-let g:solarized_termtrans=1
-let g:solarized_termcolors=64
+execute 'set rtp+='.g:vimhome
+
+
+colorscheme slate
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=64
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
-colorscheme solarized
+"colorscheme solarized
 
+set nocp
 set backspace=indent,eol,start
 set background=dark
 set nocp
@@ -30,12 +70,6 @@ set mouse=a
 set showcmd
 set foldmethod=indent
 set foldlevel=99
-
-let g:slime_target = "tmux"
-let g:slime_paste_file = "$HOME/.slime_paste"
-
-let g:pydiction_location = "$HOME/vimfiles/pydiction/complete-dict"
-let g:pydiction_menu_height = 20
 
 " Supertab settings
 " supertab + eclim == java win
