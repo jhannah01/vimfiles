@@ -12,21 +12,18 @@ if (exists("$HOME/.vim/bundle/vundle"))
     Bundle 'Valloric/YouCompleteMe'
     Bundle 'wincent/Command-T'
     Bundle 'hdima/python-syntax'
-    "Bundle 'jmcantrell/vim-virtualenv'
     Bundle 'fisadev/fisa-vim-config'
     Bundle 'vim-scripts/python_ifold'
-    "Bundle 'vim-scripts/pydoc.vim'
     Bundle 'tpope/vim-git'
     Bundle 'vim-scripts/vim-ipython'
-    "Bundle 'jpalardy/vim-slime'
     Bundle 'mbbill/undotree'
     Bundle 'tpope/vim-surround'
     Bundle 'gotcha/vimpdb'
-    "Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
     Bundle 'gregsexton/MatchTag'
-    "Bundle 'msanders/snipmate.vim'
     Bundle 'othree/html5.vim'
+    Bundle 'othree/javascript-libraries-syntax.vim'
     Bundle 'jelera/vim-javascript-syntax'
+    Bundle 'pangloss/vim-javascript'
 endif
 
 filetype plugin indent on
@@ -55,13 +52,16 @@ set foldmethod=indent
 set foldlevel=99
 set backspace=indent,eol,start
 
-"let g:pydiction_location = "$HOME/.vim/pydiction/complete-dict"
-"let g:pydiction_menu_height = 20
-
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+autocmd FileType javascript call JavaScriptFold()
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
 let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+let g:used_javascript_libs = 'jQuery'
+let g:javascript_enable_domhtmlcss = 1
+
 
 if (exists("/opt/code/.tags"))
     set tags+=/opt/code/.tags
@@ -77,8 +77,6 @@ imap <F10> <C-O>:set paste<CR>
 imap <F11> <nop>
 set pastetoggle=<F11>
 
-"nmap <C-s><C-x> :ScreenSend<CR>
-"nmap <C-s><C-q> :ScreenQuit<CR>
 nmap <C-s><C-p> :IPython<CR>
 
 nmap <C-t>n :tabnew<CR>
