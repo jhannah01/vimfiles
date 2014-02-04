@@ -1,53 +1,18 @@
 filetype off
 
 if(!exists("vimhome"))
-    if (exists("$HOME/vim/vimrc"))
-        let g:vimhome = $HOME.'/vim'
-    elseif (exists("$HOME/home/vim/vimrc"))
-        let g:vimhome = $HOME.'/home/vim'
+    if (exists("$HOME/vimfiles/vimrc"))
+        let g:vimhome = $HOME.'/vimfiles'
+    elseif (exists("$HOME/home/vimfiles/vimrc"))
+        let g:vimhome = $HOME.'/home/vimfiles'
     endif
 endif
 
-if (exists(g:vimhome.'/bundle/vundle'))
-    set &rtp += vundlepath
-    call vundle#rc(g:vimhome.'/bundle')
+execute "source ".g:vimhome."/bundles.vim"
 
-    Bundle 'gmarik/vundle'
-    Bundle 'scrooloose/syntastic'
-    Bundle 'xolox/vim-misc'
-    Bundle 'tpope/vim-fugitive'
-    Bundle 'Lokaltog/vim-easymotion'
-    Bundle 'Valloric/YouCompleteMe'
-    Bundle 'wincent/Command-T'
-    "Bundle 'xolox/vim-easytags'
-    Bundle 'hdima/python-syntax'
-    Bundle 'jmcantrell/vim-virtualenv'
-    Bundle 'fisadev/fisa-vim-config'
-    Bundle 'vim-scripts/python_ifold'
-    "Bundle 'vim-scripts/pydoc.vim'
-    Bundle 'tpope/vim-git'
-    Bundle 'vim-scripts/vim-ipython'
-    "Bundle 'jpalardy/vim-slime'
-    Bundle 'mbbill/undotree'
-    Bundle 'tpope/vim-surround'
-    Bundle 'gotcha/vimpdb'
-    Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
-    Bundle 'gregsexton/MatchTag'
-    Bundle 'msanders/snipmate.vim'
-endif
-
-filetype plugin indent on
-syntax on
-
-execute 'set rtp+='.g:vimhome
-
+set statusline+='%<\ %f\ %{fugitive#statusline()}'
 
 colorscheme slate
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=64
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"colorscheme solarized
 
 set nocp
 set backspace=indent,eol,start
@@ -70,24 +35,13 @@ set mouse=a
 set showcmd
 set foldmethod=indent
 set foldlevel=99
-
-" Supertab settings
-" supertab + eclim == java win
-
-let g:SuperTabDefaultCompletionTypeDiscovery = [
-\ "&completefunc:<c-x><c-u>",
-\ "&omnifunc:<c-x><c-o>",
-\ ]
-
-let g:SuperTabLongestHighlight = 1
+syntax on
 
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 omnifunc=pysmell#Complete
-let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
 let g:tagbar_usearrows = 1
-
 if (exists("$HOME/_tags"))
     set tags+=$HOME/_tags
 endif

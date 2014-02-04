@@ -46,8 +46,8 @@
 [submodule "bundle/vim-css-color"]
 	path = bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
-[submodule "bundle/better-css-syntax"]
-	path = bundle/better-css-syntax
+[submodule "bundle/Better-CSS-Syntax-for-Vim"]
+	path = bundle/Better-CSS-Syntax-for-Vim
 	url = https://github.com/vim-scripts/Better-CSS-Syntax-for-Vim.git
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
@@ -64,9 +64,9 @@
 [submodule "bundle/vim-gradle"]
 	path = bundle/vim-gradle
 	url = https://github.com/tfnico/vim-gradle.git
-[submodule "bundle\\YouCompleteMe"]
-	path = bundle\\YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/jhannah01/YouCompleteMe.git
 [submodule "bundle/vundle"]
 	path = bundle/vundle
 	url = https://github.com/gmarik/vundle.git
