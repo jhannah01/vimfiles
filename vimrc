@@ -1,30 +1,28 @@
 filetype off
 
-if (exists("$HOME/.vim/bundle/vundle"))
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
+set rtp+=/opt/vim/bundle/vundle/
+call vundle#rc("/opt/vim/bundle")
 
-    Bundle 'gmarik/vundle'
-    Bundle 'scrooloose/syntastic'
-    Bundle 'xolox/vim-misc'
-    Bundle 'tpope/vim-fugitive'
-    Bundle 'Lokaltog/vim-easymotion'
-    Bundle 'Valloric/YouCompleteMe'
-    Bundle 'wincent/Command-T'
-    Bundle 'hdima/python-syntax'
-    Bundle 'fisadev/fisa-vim-config'
-    Bundle 'vim-scripts/python_ifold'
-    Bundle 'tpope/vim-git'
-    Bundle 'vim-scripts/vim-ipython'
-    Bundle 'mbbill/undotree'
-    Bundle 'tpope/vim-surround'
-    Bundle 'gotcha/vimpdb'
-    Bundle 'gregsexton/MatchTag'
-    Bundle 'othree/html5.vim'
-    Bundle 'othree/javascript-libraries-syntax.vim'
-    Bundle 'jelera/vim-javascript-syntax'
-    Bundle 'pangloss/vim-javascript'
-endif
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/syntastic'
+Bundle 'xolox/vim-misc'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'wincent/Command-T'
+Bundle 'hdima/python-syntax'
+Bundle 'fisadev/fisa-vim-config'
+Bundle 'vim-scripts/python_ifold'
+Bundle 'tpope/vim-git'
+Bundle 'vim-scripts/vim-ipython'
+Bundle 'mbbill/undotree'
+Bundle 'tpope/vim-surround'
+Bundle 'gotcha/vimpdb'
+Bundle 'gregsexton/MatchTag'
+Bundle 'othree/html5.vim'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
 
 filetype plugin indent on
 syntax on
