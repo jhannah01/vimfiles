@@ -10,30 +10,12 @@
 [submodule "bundle/bundle/vim-easymotion"]
     path = bundle/vim-easymotion
     url = https://github.com/Lokaltog/vim-easymotion.git
-[submodule "bundle/YouCompleteMe"]
-    path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "bundle/syntastic"]
-    path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/Command-T"]
-    path = bundle/Command-T
-    url = https://github.com/wincent/Command-T.git
 [submodule "bundle/vim-easytags"]
     path = bundle/vim-easytags
     url = https://github.com/xolox/vim-easytags.git
-[submodule "bundle/python-syntax"]
-    path = bundle/python-syntax
-    url = https://github.com/hdima/python-syntax.git
 [submodule "bundle/vim-virtualenv"]
     path = bundle/vim-virtualenv
     url = https://github.com/jmcantrell/vim-virtualenv.git
-[submodule "bundle/fisa-vim-config"]
-    path = bundle/fisa-vim-config
-    url = https://github.com/fisadev/fisa-vim-config.git
-[submodule "bundle/python_ifold"]
-    path = bundle/python_ifold
-    url = https://github.com/vim-scripts/python_ifold.git
 [submodule "bundle/pydoc.vim"]
     path = bundle/pydoc.vim
     url = https://github.com/vim-scripts/pydoc.vim.git
@@ -49,12 +31,6 @@
 [submodule "bundle/undotree"]
     path = bundle/undotree
     url = https://github.com/mbbill/undotree.git
-[submodule "bundle/vim-surround"]
-    path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "bundle/vimpdb"]
-    path = bundle/vimpdb
-    url = https://github.com/gotcha/vimpdb.git
 [submodule "bundle/httplog"]
     path = bundle/httplog
     url = https://github.com/vim-scripts/httplog.git
@@ -64,6 +40,3 @@
 [submodule "bundle/MatchTag"]
     path = bundle/MatchTag
     url = https://github.com/gregsexton/MatchTag.git
-[submodule "bundle/html5.vim"]
-	path = bundle/html5.vim
-	url = https://github.com/three/html5.vim
