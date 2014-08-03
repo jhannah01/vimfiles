@@ -8,8 +8,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'xolox/vim-misc'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'wincent/Command-T'
 Bundle 'hdima/python-syntax'
 Bundle 'fisadev/fisa-vim-config'
 Bundle 'vim-scripts/python_ifold'
@@ -17,12 +15,7 @@ Bundle 'tpope/vim-git'
 Bundle 'vim-scripts/vim-ipython'
 Bundle 'mbbill/undotree'
 Bundle 'tpope/vim-surround'
-Bundle 'gotcha/vimpdb'
 Bundle 'gregsexton/MatchTag'
-Bundle 'othree/html5.vim'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
 
 filetype plugin indent on
 syntax on
@@ -54,12 +47,11 @@ autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd FileType javascript call JavaScriptFold()
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-let g:ycm_autoclose_preview_window_after_completion = 1
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-let g:used_javascript_libs = 'jQuery'
-let g:javascript_enable_domhtmlcss = 1
-
+"let g:used_javascript_libs = 'jQuery'
+"let g:javascript_enable_domhtmlcss = 1
 
 if (exists("/opt/code/.tags"))
     set tags+=/opt/code/.tags
