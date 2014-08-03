@@ -9,13 +9,11 @@ Bundle 'xolox/vim-misc'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'hdima/python-syntax'
-Bundle 'fisadev/fisa-vim-config'
 Bundle 'vim-scripts/python_ifold'
 Bundle 'tpope/vim-git'
 Bundle 'vim-scripts/vim-ipython'
 Bundle 'mbbill/undotree'
 Bundle 'tpope/vim-surround'
-Bundle 'gregsexton/MatchTag'
 
 filetype plugin indent on
 syntax on
