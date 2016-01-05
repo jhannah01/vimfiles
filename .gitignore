@@ -1,4 +1,5 @@
 .netrwhist
+bundle
 *.pyc
 *.pyo
 .*.swp
