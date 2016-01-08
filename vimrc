@@ -200,7 +200,7 @@ map <C-S-c>  "+y<CR>
 map <C-S-v> "+p<CR>
 
 " Ctrl-[ jump out of the tag stack (undo Ctrl-])
-map <C-[> <ESC>:po<CR>
+"map <C-[> <ESC>:po<CR>
 
 map <leader>g :call IncludeGuard()<CR>
 fun! IncludeGuard()
