@@ -1,8 +1,7 @@
 .netrwhist
-bundle
 *.pyc
 *.pyo
 .*.swp
 *.*swo
-
+bundle/
 .local/
