@@ -3,5 +3,4 @@
 *.pyo
 .*.swp
 *.*swo
-bundle/
 .local/
