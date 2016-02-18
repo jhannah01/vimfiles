@@ -10,6 +10,7 @@ Bundle 'Lokaltog/vim-easymotion'
 " for omnicomp
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
 Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'scrooloose/syntastic'
 
@@ -32,10 +33,14 @@ Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'itspriddle/vim-jquery'
 
-"----BundlE
+"----Bundle
 Bundle 'xolox/vim-misc'
 Bundle 'hdima/python-syntax'
 Bundle 'vim-scripts/vim-ipython'
 Bundle 'mbbill/undotree'
 Bundle 'vim-scripts/taglist.vim'
 
+"-----Others
+Bundle 'Shougo/vimshell.vim'
+Bundle 'vim-scripts/bash-support.vim'
+Bundle 'MarcWeber/vim-addon-local-vimrc'
