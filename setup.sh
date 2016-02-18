@@ -9,6 +9,11 @@ git -C "${VIM_DIR}" submodule update
 git -C "${VIM_DIR}/bundle/vundle" checkout master
 git -C "${VIM_DIR}/bundle/vundle" pull
 
+if [ -f /usr/share/vim/vimfiles/bash-support/templates/Templates ] ; then
+    mkdir -p /usr/share/vim/vimfiles/bash-support/templates
+    touch /usr/share/vim/vimfiles/bash-support/templates/Templates
+fi
+
 if [ -f /root/.vimrc ] ; then
     echo " [#] Warning: /root/.vimrc already exists. Re-link to ${VIM_DIR}/vimrc manually." >&2
 else
