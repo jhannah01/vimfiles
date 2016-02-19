@@ -1,13 +1,13 @@
 #!/bin/bash
 
-VIM_DIR=$(realpath `dirname $0`)
+VIM_DIR=$(readlink -f `dirname $0`)
 
 echo " [-] Installing vim files from ${VIM_DIR}..."
 
-[ -f ${VIM_DIR}/bundle/vundle/.git ] || git -C "${VIM_DIR}" submodule init -- "${VIM_DIR}/bundle/vundle"
-git -C "${VIM_DIR}" submodule update
-git -C "${VIM_DIR}/bundle/vundle" checkout master
-git -C "${VIM_DIR}/bundle/vundle" pull
+[ -f ${VIM_DIR}/bundle/vundle/.git ] || GIT_DIR="${VIM_DIR}" git submodule init -- bundle/vundle
+GIT_DIR="${VIM_DIR}" git submodule update
+GIT_DIR="${VIM_DIR}/bundle/vundle" git checkout master
+GIT_DIR="${VIM_DIR}/bundle/vundle" git pull
 
 if [ -f /usr/share/vim/vimfiles/bash-support/templates/Templates ] ; then
     mkdir -p /usr/share/vim/vimfiles/bash-support/templates
@@ -20,10 +20,14 @@ else
     if [ -L /root/.vimrc ] ; then
         echo " [-] Replacing old symlink in /root/.vimrc to repoint to ${VIM_DIR}/vimrc"
         rm -f /root/.vimrc
-        [ -f /root/.gvimrc ] && rm -f /root/.gvimrc
     fi
     ln -s ${VIM_DIR}/vimrc /root/.vimrc
-    ln -s ${VIM_DIR}/gvimrc /root/.gvimrc
+    
+    if [ -L /root/.gvimrc ] ; then
+        rm -f /root/.gvimrc
+    elif [ ! -f /root/.gvimrc ] ; then
+        ln -s ${VIM_DIR}/gvimrc /root/.gvimrc
+    fi
 fi
 
 echo " [+] Done. Run vim and then execute ':BundleUpdate' and you are all set."
