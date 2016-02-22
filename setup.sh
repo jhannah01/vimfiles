@@ -4,15 +4,15 @@ VIM_DIR=$(readlink -f `dirname $0`)
 
 echo " [-] Installing vim files from ${VIM_DIR}..."
 
-[ -f ${VIM_DIR}/bundle/vundle/.git ] || GIT_DIR="${VIM_DIR}" git submodule init -- bundle/vundle
-GIT_DIR="${VIM_DIR}" git submodule update
-GIT_DIR="${VIM_DIR}/bundle/vundle" git checkout master
-GIT_DIR="${VIM_DIR}/bundle/vundle" git pull
+pushd "${VIM_DIR}"
 
-if [ -f /usr/share/vim/vimfiles/bash-support/templates/Templates ] ; then
-    mkdir -p /usr/share/vim/vimfiles/bash-support/templates
-    touch /usr/share/vim/vimfiles/bash-support/templates/Templates
-fi
+[ -f ${VIM_DIR}/bundle/vundle/.git ] || git submodule init -- bundle/vundle
+git submodule update
+cd bundle/vundle
+git checkout master
+git pull
+
+[ -f /usr/share/vim/vimfiles/bash-support/templates/Templates ] || ( mkdir -p /usr/share/vim/vimfiles/bash-support/templates ; touch /usr/share/vim/vimfiles/bash-support/templates/Templates ; )
 
 if [ -f /root/.vimrc ] ; then
     echo " [#] Warning: /root/.vimrc already exists. Re-link to ${VIM_DIR}/vimrc manually." >&2
@@ -29,5 +29,7 @@ else
         ln -s ${VIM_DIR}/gvimrc /root/.gvimrc
     fi
 fi
+
+popd
 
 echo " [+] Done. Run vim and then execute ':BundleUpdate' and you are all set."
