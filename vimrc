@@ -13,7 +13,8 @@ filetype plugin on  " Enable filetype-specific plugins
 syntax on
 
 set hlsearch        " search highlighting
-colorscheme elflord
+"colorscheme elflord
+colorscheme kolor
 set background=dark
 
 " auto reload vimrc when editing it
