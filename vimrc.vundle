@@ -8,9 +8,9 @@ Bundle 'vim-scripts/matchit.zip'
 Bundle 'Lokaltog/vim-easymotion'
 
 " for omnicomp
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/neosnippet-snippets'
+"Bundle 'Shougo/neocomplcache'
+"Bundle 'Shougo/neosnippet'
+"Bundle 'Shougo/neosnippet-snippets'
 Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'scrooloose/syntastic'
 
