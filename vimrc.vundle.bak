@@ -6,7 +6,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'dsawardekar/wordpress.vim'
 
 " for omnicomp
 "Bundle 'Shougo/neocomplcache'
@@ -16,15 +15,12 @@ Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'scrooloose/syntastic'
 
 " for php
-""Bundle 'stephpy/vim-php-cs-fixer'
-""Bundle 'arnaud-lb/vim-php-namespace'
-""Bundle 'shawncplus/phpcomplete.vim'
-""Bundle 'vim-scripts/PDV--phpDocumentor-for-Vim'
-""Bundle 'erikfercak/php-search-doc'
-""Bundle 'lucapette/vim-jquery-doc'
-
-" for python
-Bundle 'klen/python-mode'
+Bundle 'stephpy/vim-php-cs-fixer'
+Bundle 'arnaud-lb/vim-php-namespace'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'vim-scripts/PDV--phpDocumentor-for-Vim'
+Bundle 'erikfercak/php-search-doc'
+Bundle 'lucapette/vim-jquery-doc'
 
 "--------------------
 " for html, haml, sass
@@ -37,11 +33,6 @@ Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'itspriddle/vim-jquery'
 
-" -------------------
-" for applescript
-" -------------------
-Bundle 'vim-scripts/applescript.vim'
-
 "----Bundle
 Bundle 'xolox/vim-misc'
 Bundle 'hdima/python-syntax'
@@ -53,6 +44,6 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'Shougo/vimshell.vim'
 Bundle 'vim-scripts/bash-support.vim'
 Bundle 'MarcWeber/vim-addon-local-vimrc'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'ninja/sky'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'zeis/vim-kolor'

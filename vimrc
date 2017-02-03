@@ -43,7 +43,7 @@ set showmode        " Show current mode
 set wildchar=<TAB>  " start wild expansion in the command line using <TAB>
 set wildmenu        " wild char completion menu
 
-autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 autoindent smarttab
+autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 autoindent smarttab colorcolumn=120
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " status line
@@ -259,24 +259,24 @@ if !exists('g:neocomplcache_keyword_patterns')
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
+"imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+"smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+"inoremap <expr><C-g>     neocomplcache#undo_completion()
+"inoremap <expr><C-l>     neocomplcache#complete_common_string()
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-fun! s:my_cr_func()
-    return pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
-endfun
+"fun! s:my_cr_func()
+"    return pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
+"endfun
 "inoremap <expr><CR>  neocomplcache#smart_close_popup()."\<CR>"
-inoremap <silent> <CR> <C-r>=<SID>my_cr_func()<CR>
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_func()<CR>
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><C-y>  neocomplcache#close_popup()
+"inoremap <expr><C-e>  neocomplcache#cancel_popup()
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
     let g:neocomplcache_omni_patterns = {}
@@ -346,3 +346,30 @@ map <buffer> <leader><Leader>u :call PhpInsertUse()<CR>
 inoremap <leader>pd <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <leader>pd :call PhpDocSingle()<CR> 
 vnoremap <leader>pd :call PhpDocRange()<CR>  
+
+let g:BASH_GlobalTemplateFile = $HOME.'/.vim/bash-support/templates/Templates'
+
+if exists('g:pymode_options_max_line_length')
+    let g:pymode_options            = 1 " Set default python options
+    let g:pymode_warnings           = 1 " Disable noisy warnings
+    let g:pymode_folding            = 1 " Enable folding by default
+    let g:pymode_lint               = 0 " Disable pylint
+    let g:pymode_rope_autoimport    = 1 " Enable autoimport rope completion
+    let g:pymode_rope_autoimport_modules = ['os', 'os.path', 're', 'shutil', 'sys', 'datetime']
+    let g:pymode_rope_autoimport_import_after_complete  = 1
+    let g:pymode_options_max_line_length = 120
+  
+    " Override go-to.definition key shortcut to Ctrl-]
+    let g:pymode_rope_goto_definition_bind = "<C-]>"
+
+    " Override run current python file key shortcut to Ctrl-Shift-e
+    let g:pymode_run_bind = "<C-S-e>"
+
+    " Override view python doc key shortcut to Ctrl-Shift-d
+    let g:pymode_doc_bind = "<C-S-d>"
+endif
+
+
+"let g:pymode_lint_config = $HOME.'/.pylint.rc'
+
+source /opt/vim/vimrc-init.vim
