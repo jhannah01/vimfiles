@@ -1,0 +1,7 @@
+" Get some globals ready
+
+let s:script_path = resolve(expand('<sfile>:p'))
+
+" Check vimrc.bundle exists and if so; execute
+
+if exists(resolve('s:script_path/vimrc.bundle'))

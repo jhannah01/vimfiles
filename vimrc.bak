@@ -1,0 +1,67 @@
+set nocp
+filetype off
+
+"#"fun! CheckIsDir (obj)
+"#"  echom a:obj
+"#"  return (!empty(a:obj) && isdirectory(a:obj))
+"#"endfun
+
+"#"fun! CheckIsFile (obj, ...)
+"#"  if empty(a:obj)
+"#"    return 1
+"#"  endif
+
+"#"  if filereadable(a:obj)==1
+"#"    return 0
+"#"  else
+"#"    if !empty(a:1)
+"#"      let l:output = system('mkdir -p '.fnamemodify(a:1, ':p:h').' 2>&1')
+
+"#"      if !v:shell_error:
+"#"        return 0
+"#"      endif
+"#"    endif
+"#"  endif
+
+"#"  let l:output = system("touch ".target_file." 2>&1")
+"#"  if !v:shell_error
+"#"    if !empty(l:output)
+"#"      echo "Error: ".l:output
+"#"    endif
+"#"    return 0
+"#"  endif
+
+"#"  return 1
+"#"endfun
+
+let s:base_path = '/opt/vim' "resolve(expand(fnamemodify('<sfile>', ':p:h')))
+let s:vundle_path = '/opt/vim/bundle/vundle' "resolve(expand(s:base_path."/bundle/vundle"))
+let no_vundle=0
+
+"#"if !CheckIsDir(s:vundle_path)
+"#"  echo 'Oh no, can't find Vundle installation in ['.s:vundle_path.'] so make sure to run "git clone https://github.com/VundleVim/Vundle.vim -o github -b master '.s:vundle_path.'" and restart VIM. Bailing..'
+"#"else
+  set rtp+=s:vundle_path
+
+"#"  if CheckIsDir(resolve(s:base_path . "/vimrc.vundle"))
+    source "/opt/vim/vimrc.vundle"
+"#" resolve(s:base_path."/vimrc.vundle")
+    call vundle#rc(/opt/vim/bundle)
+"#" resolve(expand(fnamemodify("<sfile>", ":p:h")))."/bundle")
+    Bundle 'gmarik/vundle'
+"#"  else
+"#"    echo "Oh no, can't find Vundle configuration file. Skipping it..."
+"#"  endif
+
+  " Fix annoying warning on RHEL/CentOS about missing templates/Templates file
+  let g:BASH_GlobalTemplateFile = $HOME.'/.vim/bash-support/templates/Templates'
+  "#" CheckIsFile(resolve(g:BASH_GlobalTemplateFile), 'yes')
+
+"#"  if CheckIsFile(resolve(s:base_path."/vimrc-init.vim"))
+      source resolve(s:base_path."/vimrc-init.vim"))
+"#"  else
+"#"    echo 'Oh no, can't find Vundle installation in ['.vundle_path.'] so make sure to run "git clone https://github.com/VundleVim/Vundle.vim -o github -b master '.vundle_path.'" and restart VIM. Bailing..'
+"#"  endif
+"#"endif
+
+" vim: set ft=vim ts=2 sw=2 et
