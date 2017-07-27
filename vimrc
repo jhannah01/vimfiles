@@ -1,11 +1,11 @@
 set nocp
 filetype off
 
-set rtp+=/opt/vim/bundle/vundle/
-call vundle#rc("/opt/vim/bundle")
+set rtp+=/data/local/home/.vim/bundle/vundle/
+call vundle#rc("/data/local/home/.vim/bundle")
 
 Bundle 'gmarik/vundle'
-source /opt/vim/vimrc.vundle
+source /data/local/home/.vim/vimrc.vundle
 
 filetype on         " Enable filetype detection
 filetype indent on  " Enable filetype-specific indenting
@@ -372,4 +372,4 @@ endif
 
 "let g:pymode_lint_config = $HOME.'/.pylint.rc'
 
-source /opt/vim/vimrc-init.vim
+source /data/local/home/.vim/vimrc-init.vim
