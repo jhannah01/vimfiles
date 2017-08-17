@@ -307,6 +307,8 @@ nnoremap <leader>sY :bufdo unlet b:syntastic_mode<CR>
 " directory missing
 " -------------------------------------------
 
+let g:BASH_GlobalTemplateFile = $HOME.'/.vim/bash-support/templates/Templates'
+
 function! CheckBashTemplateDir()
     let bash_template_dir = fnamemodify(g:BASH_GlobalTemplateFile, ":p:h")
 
