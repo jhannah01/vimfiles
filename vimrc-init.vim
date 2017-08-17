@@ -301,4 +301,24 @@ let b:syntastic_mode='passive'
 nnoremap <leader>sN :bufdo let b:syntastic_mode='passive'<CR>
 nnoremap <leader>sY :bufdo unlet b:syntastic_mode<CR>
 
+" -------------------------------------------
+" Fix bash-support directory
+" $HOME/.vim/bash-support/templates/Templates
+" directory missing
+" -------------------------------------------
+
+function! CheckBashTemplateDir()
+    let bash_template_dir = fnamemodify(g:BASH_GlobalTemplateFile, ":p:h")
+
+    if !isdirectory(bash_template_dir)
+        call mkdir(bash_template_dir, "p")
+    endif
+
+    if !filereadable(g:BASH_GlobalTemplateFile)
+        call system("touch " . g:BASH_GlobalTemplateFile)
+    endif
+endfunction
+
+call CheckBashTemplateDir()
+
 " vim: set ts=2 sw=2 ft=vim
