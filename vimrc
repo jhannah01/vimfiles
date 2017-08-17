@@ -354,9 +354,10 @@ if exists('g:pymode_options_max_line_length')
     let g:pymode_warnings           = 1 " Disable noisy warnings
     let g:pymode_folding            = 1 " Enable folding by default
     let g:pymode_lint               = 0 " Disable pylint
-    let g:pymode_rope_autoimport    = 1 " Enable autoimport rope completion
+    let g:pymode_rope               = 0
+    let g:pymode_rope_autoimport    = 0
     let g:pymode_rope_autoimport_modules = ['os', 'os.path', 're', 'shutil', 'sys', 'datetime']
-    let g:pymode_rope_autoimport_import_after_complete  = 1
+    let g:pymode_rope_autoimport_import_after_complete  = 0
     let g:pymode_options_max_line_length = 120
   
     " Override go-to.definition key shortcut to Ctrl-]
