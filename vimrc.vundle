@@ -45,7 +45,7 @@ Bundle 'vim-scripts/applescript.vim'
 "----Bundle
 Bundle 'xolox/vim-misc'
 Bundle 'hdima/python-syntax'
-Bundle 'vim-scripts/vim-ipython'
+Bundle 'ivanov/vim-ipython'
 Bundle 'mbbill/undotree'
 Bundle 'vim-scripts/taglist.vim'
 

@@ -271,6 +271,7 @@ let g:pymode_options            = 1 " Set default python options
 let g:pymode_warnings           = 1 " Disable noisy warnings
 let g:pymode_folding            = 0 " Don't enable folding by default
 let g:pymode_lint               = 0 " Disable pylint
+let g:pymode_rope               = 0
 let g:pymode_rope_autoimport    = 1 " Enable autoimport rope completion
 let g:pymode_rope_autoimport_modules = ['os', 're', 'shutil', 'sys', 'datetime']
 let g:pymode_rope_autoimport_import_after_complete  = 1
