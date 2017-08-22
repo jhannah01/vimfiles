@@ -3,11 +3,12 @@ filetype indent on  " Enable filetype-specific indenting
 filetype plugin on  " Enable filetype-specific plugins
 syntax on
 
-"colorscheme elflord
+set bg=dark
 colorscheme kolor
 
 " auto reload vimrc when editing it
 autocmd! bufwritepost .vimrc source ~/.vimrc
+autocmd! bufwritepost vimrc-init.vim source ~/.vimrc
 
 set nocp
 set ts=4
@@ -53,7 +54,7 @@ set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.lo,*.la,*.obj,*.pyc
 set wildignore+=*.exe,*.zip,*.jpg,*.png,*.gif,*.jpeg
 
 " folding
-"set foldenable
+set nofoldenable
 set foldmethod=marker
 set foldlevel=0
 set foldcolumn=0
@@ -209,12 +210,6 @@ set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
 set wildignore+=.svn,CVS,.git
 set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.lo,*.la,*.obj,*.pyc
 set wildignore+=*.exe,*.zip,*.jpg,*.png,*.gif,*.jpeg,.DS_Store
-
-" folding
-set foldenable
-set foldmethod=marker
-set foldlevel=0
-set foldcolumn=0
 
 " ---------
 " Functions
@@ -420,35 +415,35 @@ let g:easytags_resolve_links = 1
 "---------------------------------------------
 map <C-\> :bel 8sp <CR>:exec("tag ".expand("<cword>"))<CR>
 
-let g:BASH_GlobalTemplateFile = $HOME.'/.vim/bash-support/templates/Templates'
-
 " ----------
 " For pymode
 " ----------
 
-"if exists('g:pymode_options_max_line_length')
-    let g:pymode_options            = 1 " Set default python options
-    let g:pymode_warnings           = 0 " Disable noisy warnings
-    let g:pymode_folding            = 0 " Enable folding by default
-    let g:pymode_lint               = 0 " Disable pylint
-    let g:pymode_lint_on_save       = 0 " Disable lint on save
-    let g:pymode_lint_on_write      = 0 " Disable lint on write
-    let g:pymode_rope               = 0 " Keeps indexing garbage TODO: Fix This
-    let g:pymode_rope_autoimport    = 1 " Enable autoimport rope completion
-    let g:pymode_rope_autoimport_modules = ['os', 'os.path', 're', 'shutil', 'sys', 'datetime']
-    let g:pymode_rope_autoimport_import_after_complete  = 0
-    let g:pymode_rope_regenerate_on_write = 0
-    let g:pymode_options_max_line_length = 120
-  
-    " Override go-to.definition key shortcut to Ctrl-]
-    let g:pymode_rope_goto_definition_bind = "<C-]>"
+let g:pymode_options            = 1 " Set default python options
+let g:pymode_warnings           = 0 " Disable noisy warnings
+let g:pymode_folding            = 0 " Enable folding by default
+let g:pymode_lint               = 1 " Disable pylint
+let g:pymode_lint_on_save       = 1 " Disable lint on save
+let g:pymode_lint_on_write      = 1 " Disable lint on write
+let g:pymode_lint_ignore        = ['W0611'] " Ignore lint errors for unused objects
+let g:pymode_rope               = 1 " Keeps indexing garbage TODO: Fix This
+let g:pymode_rope_autoimport    = 1 " Enable autoimport rope completion
+let g:pymode_rope_autoimport_modules = ['os', 'os.path', 're', 'shutil', 'sys', 'datetime']
+let g:pymode_rope_autoimport_import_after_complete  = 1
+let g:pymode_rope_regenerate_on_write = 1
+let g:pymode_options_max_line_length = 120
+"let g:pymode_lint_options_mccabe = {'complexity': 30}
+let g:pymode_lint_checkers = ['pyflakes', 'pep8']
 
-    " Override run current python file key shortcut to Ctrl-Shift-e
-    let g:pymode_run_bind = "<C-S-e>"
 
-    " Override view python doc key shortcut to Ctrl-Shift-d
-    let g:pymode_doc_bind = "<C-S-d>"
-"endif
+" Override go-to.definition key shortcut to Ctrl-]
+let g:pymode_rope_goto_definition_bind = "<C-]>"
+
+" Override run current python file key shortcut to Ctrl-Shift-e
+let g:pymode_run_bind = "<C-S-e>"
+
+" Override view python doc key shortcut to Ctrl-Shift-d
+let g:pymode_doc_bind = "<C-S-d>"
 
 "let g:pymode_lint_config = $HOME.'/.pylint.rc'
 
@@ -483,5 +478,27 @@ if filereadable("/opt/vim/bundle/vim-ipython/ftplugin/python/ipy.vim")
 else
     echo "Cannot find ipy.vim in '/opt/vim/bundle/vim-ipython/ftplugin/python". Check it is installed""
 endif
+
+" -------------------------------------------
+" Fix bash-support directory
+" $HOME/.vim/bash-support/templates/Templates
+" directory missing
+" -------------------------------------------
+
+let g:BASH_GlobalTemplateFile = $HOME.'/.vim/bash-support/templates/Templates'
+
+function! CheckBashTemplateDir()
+    let bash_template_dir = fnamemodify(g:BASH_GlobalTemplateFile, ":p:h")
+
+    if !isdirectory(bash_template_dir)
+        call mkdir(bash_template_dir, "p")
+    endif
+
+    if !filereadable(g:BASH_GlobalTemplateFile)
+        call system("touch " . g:BASH_GlobalTemplateFile)
+    endif
+endfunction
+
+call CheckBashTemplateDir()
 
 " vim: set ts=2 sw=2 ft=vim

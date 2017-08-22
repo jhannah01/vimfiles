@@ -1,4 +1,5 @@
-" general 
+" General
+" -------
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
@@ -6,53 +7,29 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'dsawardekar/wordpress.vim'
+Bundle 'mbbill/undotree'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'Shougo/vimshell.vim'
+Bundle 'MarcWeber/vim-addon-local-vimrc'
+Bundle 'ninja/sky'
+Bundle 'xolox/vim-misc'
+Bundle 'zeis/vim-kolor'
 
-" for omnicomp
-"Bundle 'Shougo/neocomplcache'
-"Bundle 'Shougo/neosnippet'
-"Bundle 'Shougo/neosnippet-snippets'
+" OmniComplete
+" ------------
 Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'scrooloose/syntastic'
 
-" for php
-""Bundle 'stephpy/vim-php-cs-fixer'
-""Bundle 'arnaud-lb/vim-php-namespace'
-""Bundle 'shawncplus/phpcomplete.vim'
-""Bundle 'vim-scripts/PDV--phpDocumentor-for-Vim'
-""Bundle 'erikfercak/php-search-doc'
-""Bundle 'lucapette/vim-jquery-doc'
-
-" for python
+" Python
+" ------
 Bundle 'klen/python-mode'
+Bundle 'ivanov/vim-ipython'
 
-"--------------------
-" for html, haml, sass
-"--------------------
+" Other Syntax
+" ------------
+Bundle 'hdima/python-syntax'
+Bundle 'vim-scripts/applescript.vim'
 Bundle 'tpope/vim-haml'
-
-"--------------------
-" for javascript
-"--------------------
 Bundle 'pangloss/vim-javascript'
 Bundle 'itspriddle/vim-jquery'
-
-" -------------------
-" for applescript
-" -------------------
-Bundle 'vim-scripts/applescript.vim'
-
-"----Bundle
-Bundle 'xolox/vim-misc'
-Bundle 'hdima/python-syntax'
-Bundle 'vim-scripts/vim-ipython'
-Bundle 'mbbill/undotree'
-Bundle 'vim-scripts/taglist.vim'
-
-"-----Others
-Bundle 'Shougo/vimshell.vim'
 Bundle 'vim-scripts/bash-support.vim'
-Bundle 'MarcWeber/vim-addon-local-vimrc'
-Bundle 'ninja/sky'
-Bundle 'zeis/vim-kolor'
-"Bundle 'tmhedberg/SimpylFold'
