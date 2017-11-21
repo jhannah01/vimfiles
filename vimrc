@@ -1,10 +1,10 @@
 set nocp
 filetype off
 
-set rtp+=/opt/vim/bundle/vundle/
-call vundle#rc("/opt/vim/bundle")
+set rtp+=/usr/local/vimfiles/bundle/vundle/
+call vundle#rc("/usr/local/vimfiles/bundle")
 
 Bundle 'gmarik/vundle'
-source /opt/vim/vimrc.vundle
+source /usr/local/vimfiles/vimrc.vundle
 
-source /opt/vim/vimrc-init.vim
+source /usr/local/vimfiles/vimrc-init.vim

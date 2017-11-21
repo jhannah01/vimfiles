@@ -473,11 +473,11 @@ let b:syntastic_mode='passive'
 nnoremap <leader>sN :bufdo let b:syntastic_mode='passive'<CR>
 nnoremap <leader>sY :bufdo unlet b:syntastic_mode<CR>
 
-if filereadable("/opt/vim/bundle/vim-ipython/ftplugin/python/ipy.vim")
-    source /opt/vim/bundle/vim-ipython/ftplugin/python/ipy.vim
-else
-    echo "Cannot find ipy.vim in '/opt/vim/bundle/vim-ipython/ftplugin/python". Check it is installed""
-endif
+"if filereadable("/usr/local/vimfiles/bundle/vim-ipython/ftplugin/python/ipy.vim")
+"    source /usr/local/vimfiles/bundle/vim-ipython/ftplugin/python/ipy.vim
+"else
+"    echo "Cannot find ipy.vim in '/usr/local/vimfiles/bundle/vim-ipython/ftplugin/python". Check it is installed""
+"endif
 
 " -------------------------------------------
 " Fix bash-support directory
