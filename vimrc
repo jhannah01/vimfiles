@@ -1,32 +1,40 @@
+let s:base_path = resolve(expand(fnamemodify('<sfile>', ':p:h')))
+let s:vundle_path = resolve(expand(s:base_path . "/bundle/vundle"))
+
 filetype off
 
-if (exists("$HOME/.vim/bundle/vundle"))
-    set rtp+=~/.vim/bundle/vundle/
+if (exists(s:vundle_path))
+    set rtp+=s:vundle_path
     call vundle#rc()
 
     Bundle 'gmarik/vundle'
-    Bundle 'scrooloose/syntastic'
-    Bundle 'xolox/vim-misc'
-    Bundle 'tpope/vim-fugitive'
-    Bundle 'Lokaltog/vim-easymotion'
-    "Bundle 'Valloric/YouCompleteMe'
-    Bundle 'wincent/Command-T'
-    "Bundle 'xolox/vim-easytags'
-    Bundle 'hdima/python-syntax'
-    Bundle 'jmcantrell/vim-virtualenv'
-    Bundle 'fisadev/fisa-vim-config'
-    Bundle 'vim-scripts/python_ifold'
-    "Bundle 'vim-scripts/pydoc.vim'
-    Bundle 'tpope/vim-git'
-    Bundle 'vim-scripts/vim-ipython'
-    "Bundle 'jpalardy/vim-slime'
-    Bundle 'mbbill/undotree'
-    Bundle 'tpope/vim-surround'
-    Bundle 'gotcha/vimpdb'
-    Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
-    Bundle 'gregsexton/MatchTag'
-    Bundle 'msanders/snipmate.vim'
-    Bundle 'jamessan/vim-gnupg'
+
+    if (exists(s:base_path . "/vimrc.vundle"))
+        source s:base_path . "/vimrc.vundle"
+    else
+        Bundle 'scrooloose/syntastic'
+        Bundle 'xolox/vim-misc'
+        Bundle 'tpope/vim-fugitive'
+        Bundle 'Lokaltog/vim-easymotion'
+        "Bundle 'Valloric/YouCompleteMe'
+        Bundle 'wincent/Command-T'
+        "Bundle 'xolox/vim-easytags'
+        Bundle 'hdima/python-syntax'
+        Bundle 'jmcantrell/vim-virtualenv'
+        Bundle 'fisadev/fisa-vim-config'
+        Bundle 'vim-scripts/python_ifold'
+        "Bundle 'vim-scripts/pydoc.vim'
+        Bundle 'tpope/vim-git'
+        Bundle 'vim-scripts/vim-ipython'
+        "Bundle 'jpalardy/vim-slime'
+        Bundle 'mbbill/undotree'
+        Bundle 'tpope/vim-surround'
+        Bundle 'gotcha/vimpdb'
+        Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+        Bundle 'gregsexton/MatchTag'
+        Bundle 'msanders/snipmate.vim'
+        Bundle 'jamessan/vim-gnupg'
+    endif
 endif
 
 filetype plugin indent on
@@ -62,12 +70,10 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-if (exists("/opt/code/.tags"))
-    set tags+=/opt/code/.tags
-endif
-
 if (exists("~/.tags"))
     set tags+=~/.tags
+elif (exists(s:base_path."/.tags"))
+    set tags+=s:base_path."/.tags"
 endif
 
 map <F10> :set paste<CR>
