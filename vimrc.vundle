@@ -20,6 +20,10 @@ Bundle 'zeis/vim-kolor'
 Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'scrooloose/syntastic'
 
+" YCM
+" ---
+Plugin 'valloric/youcompleteme'
+
 " Python
 " ------
 Bundle 'klen/python-mode'
@@ -28,8 +32,10 @@ Bundle 'ivanov/vim-ipython'
 " Other Syntax
 " ------------
 Bundle 'hdima/python-syntax'
-Bundle 'vim-scripts/applescript.vim'
+Bundle 'vim-scripts/JavaScript-Indent'
 Bundle 'tpope/vim-haml'
+Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-scripts/bash-support.vim'

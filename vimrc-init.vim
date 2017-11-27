@@ -31,6 +31,7 @@ set showcmd
 set backspace=indent,eol,start
 set background=dark
 set tags=tags
+set cryptmethod=blowfish
 
 set showmatch       " Cursor shows matching ) and }
 set showmode        " Show current mode
@@ -167,6 +168,11 @@ if has("autocmd") && exists("+omnifunc")
                 \ endif
 endif
 set cot-=preview    "disable doc preview in omnicomplete
+
+"---------------------------------------------
+" for JavaScript programming
+"---------------------------------------------
+let g:javascript_plugin_jsdoc = 1
 
 "---------------------------------------------
 " for PHP programming
@@ -426,11 +432,11 @@ let g:pymode_lint               = 1 " Disable pylint
 let g:pymode_lint_on_save       = 1 " Disable lint on save
 let g:pymode_lint_on_write      = 1 " Disable lint on write
 let g:pymode_lint_ignore        = ['W0611'] " Ignore lint errors for unused objects
-let g:pymode_rope               = 1 " Keeps indexing garbage TODO: Fix This
+let g:pymode_rope               = 0 " Keeps indexing garbage TODO: Fix This
 let g:pymode_rope_autoimport    = 1 " Enable autoimport rope completion
 let g:pymode_rope_autoimport_modules = ['os', 'os.path', 're', 'shutil', 'sys', 'datetime']
-let g:pymode_rope_autoimport_import_after_complete  = 1
-let g:pymode_rope_regenerate_on_write = 1
+let g:pymode_rope_autoimport_import_after_complete  = 0
+let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_options_max_line_length = 120
 "let g:pymode_lint_options_mccabe = {'complexity': 30}
 let g:pymode_lint_checkers = ['pyflakes', 'pep8']
