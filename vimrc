@@ -1,40 +1,17 @@
-let s:base_path = resolve(expand(fnamemodify('<sfile>', ':p:h')))
-let s:vundle_path = resolve(expand(s:base_path . "/bundle/vundle"))
-
+"let s:base_path = resolve(expand(fnamemodify('<sfile>', ':p:h')))
+let s:base_path = '/usr/local/vimfiles'
+let s:vundle_path = '/usr/local/vimfiles/bundle/vundle'
 filetype off
 
-if (exists(s:vundle_path))
-    set rtp+=s:vundle_path
+if (!empty(glob(s:vundle_path)))
+    exe 'set rtp+='.s:vundle_path
     call vundle#rc()
 
-    Bundle 'gmarik/vundle'
-
-    if (exists(s:base_path . "/vimrc.vundle"))
-        source s:base_path . "/vimrc.vundle"
-    else
-        Bundle 'scrooloose/syntastic'
-        Bundle 'xolox/vim-misc'
-        Bundle 'tpope/vim-fugitive'
-        Bundle 'Lokaltog/vim-easymotion'
-        "Bundle 'Valloric/YouCompleteMe'
-        Bundle 'wincent/Command-T'
-        "Bundle 'xolox/vim-easytags'
-        Bundle 'hdima/python-syntax'
-        Bundle 'jmcantrell/vim-virtualenv'
-        Bundle 'fisadev/fisa-vim-config'
-        Bundle 'vim-scripts/python_ifold'
-        "Bundle 'vim-scripts/pydoc.vim'
-        Bundle 'tpope/vim-git'
-        Bundle 'vim-scripts/vim-ipython'
-        "Bundle 'jpalardy/vim-slime'
-        Bundle 'mbbill/undotree'
-        Bundle 'tpope/vim-surround'
-        Bundle 'gotcha/vimpdb'
-        Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
-        Bundle 'gregsexton/MatchTag'
-        Bundle 'msanders/snipmate.vim'
-        Bundle 'jamessan/vim-gnupg'
+    if (empty(glob(s:base_path . "/vimrc.vundle")))
+        echo "Missing vimrc.vundle file in ".s:base_path
     endif
+
+    exe 'source '.s:base_path.'/vimrc.vundle'
 endif
 
 filetype plugin indent on
@@ -57,7 +34,7 @@ set undolevels=1000
 set wildignore=*.swp,*.pyc,*.pyo
 set title
 set noerrorbells
-set mouse=a
+set mouse=
 set showcmd
 set foldmethod=indent
 set foldlevel=99
