@@ -17,7 +17,8 @@ endif
 filetype plugin indent on
 syntax on
 
-colorscheme elflord
+"colorscheme elflord
+colorscheme kolor
 set background=dark
 
 set nocp
