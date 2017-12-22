@@ -22,12 +22,18 @@ Bundle 'scrooloose/syntastic'
 
 " YCM
 " ---
-Plugin 'valloric/youcompleteme'
+Bundle 'valloric/youcompleteme'
 
 " Python
 " ------
 Bundle 'klen/python-mode'
 Bundle 'ivanov/vim-ipython'
+
+" Go
+" --
+Bundle 'fatih/vim-go'
+Bundle 'nsf/gocode'
+Bundle 'farazdagi/vim-go-ide'
 
 " Other Syntax
 " ------------
@@ -39,3 +45,5 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-scripts/bash-support.vim'
+Bundle 'Shougo/neocomplete.vim'
+Bundle 'ctrlpvim/ctrlp.vim'

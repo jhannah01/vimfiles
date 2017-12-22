@@ -31,7 +31,7 @@ set showcmd
 set backspace=indent,eol,start
 set background=dark
 set tags=tags
-set cryptmethod=blowfish
+set cryptmethod=blowfish2
 
 set showmatch       " Cursor shows matching ) and }
 set showmode        " Show current mode
