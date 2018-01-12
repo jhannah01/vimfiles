@@ -453,6 +453,12 @@ let g:pymode_doc_bind = "<C-S-d>"
 
 "let g:pymode_lint_config = $HOME.'/.pylint.rc'
 
+" -------
+" Fix ycm
+" -------
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+
 " -------------
 " For Syntastic
 " -------------
@@ -506,5 +512,7 @@ function! CheckBashTemplateDir()
 endfunction
 
 call CheckBashTemplateDir()
+
+execute pathogen#infect('bundle/{}', 'vimpyre/{}')
 
 " vim: set ts=2 sw=2 ft=vim
