@@ -10,6 +10,9 @@ colorscheme kolor
 autocmd! bufwritepost .vimrc source ~/.vimrc
 autocmd! bufwritepost vimrc-init.vim source ~/.vimrc
 
+"set cm=zip
+set cm=blowfish2
+
 set nocp
 set ts=4
 set sw=4
