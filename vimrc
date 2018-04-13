@@ -43,6 +43,11 @@ set foldlevel=99
 "let g:pydiction_location = "$HOME/.vim/pydiction/complete-dict"
 "let g:pydiction_menu_height = 20
 
+if (exists("~/.pylint.rc"))
+    let g:pymode_lint_config = '$HOME/.pylint.rc'
+endif
+let g:pymode_lint_options_pep8={'max_line_length': 200}
+
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 let g:ycm_autoclose_preview_window_after_completion = 1
