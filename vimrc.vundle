@@ -25,13 +25,11 @@ Bundle 'valloric/youcompleteme'
 
 " Python
 " ------
-Bundle 'klen/python-mode'
 Bundle 'ivanov/vim-ipython'
 
 " Other Syntax
 " ------------
 Bundle 'hdima/python-syntax'
-Bundle 'vim-scripts/JavaScript-Indent'
 Bundle 'tpope/vim-haml'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
