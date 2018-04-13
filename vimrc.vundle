@@ -26,7 +26,6 @@ Bundle 'valloric/youcompleteme'
 
 " Python
 " ------
-Bundle 'klen/python-mode'
 Bundle 'ivanov/vim-ipython'
 
 " Go
