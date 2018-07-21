@@ -459,6 +459,8 @@ let g:pymode_doc_bind = "<C-S-d>"
 inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
 
+silent! py3 pass
+
 " -------------
 " For Syntastic
 " -------------
