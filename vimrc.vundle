@@ -14,11 +14,8 @@ Bundle 'xolox/vim-misc'
 Bundle 'zeis/vim-kolor'
 Bundle 'powerline/powerline'
 Bundle 'Shougo/neocomplete.vim'
-
-" OmniComplete
-" ------------
-Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'scrooloose/syntastic'
+Bundle 'whiteinge/diffconflicts'
 
 " YCM
 " ---
@@ -27,6 +24,7 @@ Bundle 'valloric/youcompleteme'
 " Python
 " ------
 Bundle 'ivanov/vim-ipython'
+Bundle 'python-mode/python-mode'
 
 " Go
 " --
@@ -37,10 +35,6 @@ Bundle 'farazdagi/vim-go-ide'
 " Other Syntax
 " ------------
 Bundle 'hdima/python-syntax'
-Bundle 'vim-scripts/JavaScript-Indent'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-scripts/bash-support.vim'
 Bundle 'lepture/vim-jinja'
