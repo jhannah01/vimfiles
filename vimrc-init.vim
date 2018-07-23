@@ -431,7 +431,7 @@ let g:pymode_folding            = 0 " Enable folding by default
 let g:pymode_lint               = 1 " Disable pylint
 let g:pymode_lint_on_save       = 1 " Disable lint on save
 let g:pymode_lint_on_write      = 1 " Disable lint on write
-let g:pymode_lint_ignore        = ['W0611'] " Ignore lint errors for unused objects
+"let g:pymode_lint_ignore        = ['W0611'] " Ignore lint errors for unused objects
 let g:pymode_rope               = 0 " Keeps indexing garbage TODO: Fix This
 let g:pymode_rope_autoimport    = 1 " Enable autoimport rope completion
 let g:pymode_rope_autoimport_modules = ['os', 'os.path', 're', 'shutil', 'sys', 'datetime']
@@ -439,7 +439,7 @@ let g:pymode_rope_autoimport_import_after_complete  = 0
 let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_options_max_line_length = 120
 "let g:pymode_lint_options_mccabe = {'complexity': 30}
-let g:pymode_lint_checkers = ['pyflakes', 'pep8']
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'flake8']
 
 
 " Override go-to.definition key shortcut to Ctrl-]
@@ -485,11 +485,10 @@ let b:syntastic_mode='passive'
 nnoremap <leader>sN :bufdo let b:syntastic_mode='passive'<CR>
 nnoremap <leader>sY :bufdo unlet b:syntastic_mode<CR>
 
-"if filereadable("/usr/local/vimfiles/bundle/vim-ipython/ftplugin/python/ipy.vim")
-"    source /usr/local/vimfiles/bundle/vim-ipython/ftplugin/python/ipy.vim
-"else
-"    echo "Cannot find ipy.vim in '/usr/local/vimfiles/bundle/vim-ipython/ftplugin/python". Check it is installed""
-"endif
+if has('python3')
+  silent! python3 1
+  let g:pymode_python = 'python3'
+endif
 
 " -------------------------------------------
 " Fix bash-support directory
