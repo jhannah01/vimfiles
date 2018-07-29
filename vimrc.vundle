@@ -32,6 +32,10 @@ Bundle 'fatih/vim-go'
 Bundle 'nsf/gocode'
 Bundle 'farazdagi/vim-go-ide'
 
+" Diff
+" ----
+Bundle 'whiteinge/diffconflicts'
+
 " Other Syntax
 " ------------
 Bundle 'hdima/python-syntax'
