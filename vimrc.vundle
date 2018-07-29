@@ -15,7 +15,6 @@ Bundle 'zeis/vim-kolor'
 Bundle 'powerline/powerline'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'whiteinge/diffconflicts'
 
 " YCM
 " ---
