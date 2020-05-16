@@ -7,6 +7,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'dsawardekar/wordpress.vim'
+Bundle 'ycm-core/YouCompleteMe'
 
 " for omnicomp
 "Bundle 'Shougo/neocomplcache'

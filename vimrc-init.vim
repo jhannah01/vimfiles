@@ -13,6 +13,18 @@ colorscheme kolor
 " auto reload vimrc when editing it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
+set nocompatible
+if has('python') " if dynamic py|py3, this line already activates python2.
+  let s:python_version = 2
+elseif has('python3')
+  let s:python_version = 3
+else
+  let s:python_version = 0
+endif
+
+" echomsg 'Using python'.s:python_version
+
+
 set nocp
 set ts=4
 set sw=4
@@ -39,7 +51,6 @@ set wildchar=<TAB>  " start wild expansion in the command line using <TAB>
 set wildmenu        " wild char completion menu
 
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 autoindent smarttab
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " status line
 set laststatus=2
@@ -142,9 +153,10 @@ endfun
 "---------------------------------------------
 " Enable omni completion. (Ctrl-X Ctrl-O)
 "---------------------------------------------
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-""autocmd FileType c set omnifunc=ccomplete#Complete
+""autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType c set omnifunc=ccomplete#Complete
 ""autocmd FileType java set omnifunc=javacomplete#Complete
+
 
 " use syntax complete if nothing else available
 if has("autocmd") && exists("+omnifunc")
