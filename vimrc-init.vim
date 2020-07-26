@@ -6,8 +6,8 @@ syntax on
 set hlsearch
 set background=dark
 
-"colorscheme elflord
-colorscheme kolor
+colorscheme elflord
+"colorscheme kolor
 
 
 " auto reload vimrc when editing it
@@ -151,17 +151,10 @@ fun! Replace()
 endfun
 
 "---------------------------------------------
-" Enable omni completion. (Ctrl-X Ctrl-O)
-"---------------------------------------------
-""autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"autocmd FileType c set omnifunc=ccomplete#Complete
-""autocmd FileType java set omnifunc=javacomplete#Complete
-
-
 " use syntax complete if nothing else available
-if has("autocmd") && exists("+omnifunc")
-    autocmd Filetype * if &omnifunc == "" |   setlocal omnifunc=syntaxcomplete#Complete | endif
-endif
+"if has("autocmd") && exists("+omnifunc")
+"    autocmd Filetype * if &omnifunc == "" |   setlocal omnifunc=syntaxcomplete#Complete | endif
+"endif
 
 "#"set cot-=preview    "disable doc preview in omnicomplete
 
@@ -215,49 +208,6 @@ hi link EasyMotionShade  Comment
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 0
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-let g:neocomplcache_enable_underbar_completion = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 2
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-" Define dictionary.
-let g:neocomplcache_dictionary_filetype_lists = { 'default': '', 'vimshell': '~/.vimshell_hist', 'scheme': '~/.gosh_completions' }
-" Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-" Plugin key-mappings.
-"" imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-"" smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-"" inoremap <expr><C-g>     neocomplcache#undo_completion()
-"" inoremap <expr><C-l>     neocomplcache#complete_common_string()
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-"" fun! s:my_cr_func()
-""    return pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
-"" endfun
-"inoremap <expr><CR>  neocomplcache#smart_close_popup()."\<CR>"
-"" inoremap <silent> <CR> <C-r>=<SID>my_cr_func()<CR>
-" <TAB>: completion.
-"" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-"" inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-"" inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-"" inoremap <expr><C-y>  neocomplcache#close_popup()
-"" inoremap <expr><C-e>  neocomplcache#cancel_popup()
-" Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-    let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-""let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " --- vim-easytags
 nnoremap <leader>ut :UpdateTags!<CR>
