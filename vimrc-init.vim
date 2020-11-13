@@ -125,21 +125,21 @@ map <leader>[ :cp<CR>
 cmap cd. lcd %:p:h
 
 " Quickly resize windows use +/-
-map - <C-W>-
-map + <C-W>+
-map > <C-W>>
-map < <C-W><
+"map - <C-W>-
+"map + <C-W>+
+"map > <C-W>>
+"map < <C-W><
 
 " Allows all window commands in insert mode
-imap <C-w> <C-o><C-w>
+"imap <C-w> <C-o><C-w>
 
 " Loop to switch windows
-nmap <S-w> :wincmd w<CR>
+"nmap <S-w> :wincmd w<CR>
 
 " new tab
-map <C-t><C-t> :tabnew .<CR>
+"map <C-t><C-t> :tabnew .<CR>
 " close tab
-map <C-t><C-w> :tabclose<CR> 
+"map <C-t><C-w> :tabclose<CR> 
 
 "--------------------------------------------------------------------------- 
 " Tip #382: Search for <cword> and replace with input() in all open buffers 
@@ -156,7 +156,11 @@ endfun
 "    autocmd Filetype * if &omnifunc == "" |   setlocal omnifunc=syntaxcomplete#Complete | endif
 "endif
 
-"#"set cot-=preview    "disable doc preview in omnicomplete
+set cot-=preview    "disable doc preview in omnicomplete
+
+"let g:jedi#use_tabs_not_buffers=1
+
+
 
 " --------------------------------
 " use w!! to write protected files
@@ -229,14 +233,14 @@ map <C-\> :bel 8sp <CR>:exec("tag ".expand("<cword>"))<CR>
 " For pymode
 " ----------
 
-let g:pymode_options            = 1 " Set default python options
-let g:pymode_warnings           = 1 " Disable noisy warnings
+"let g:pymode_options            = 1 " Set default python options
+"let g:pymode_warnings           = 1 " Disable noisy warnings
 let g:pymode_folding            = 0 " Don't enable folding by default
 let g:pymode_lint               = 0 " Disable pylint
 let g:pymode_rope               = 0
-let g:pymode_rope_autoimport    = 1 " Enable autoimport rope completion
+let g:pymode_rope_autoimport    = 0 " Enable autoimport rope completion
 let g:pymode_rope_autoimport_modules = ['os', 're', 'shutil', 'sys', 'datetime']
-let g:pymode_rope_autoimport_import_after_complete  = 1
+let g:pymode_rope_autoimport_import_after_complete  = 0
 
 " -------------
 " For Syntastic
@@ -252,8 +256,8 @@ endfunction
 command! SyntasticDisableBuffer call SyntasticDisableBuffer()
 
 "let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': [] }
-noremap <C-w>e :SyntasticCheck<CR> 
-noremap <C-w>f :SyntasticToggleMode<CR>
+"noremap <C-w>e :SyntasticCheck<CR> 
+"noremap <C-w>f :SyntasticToggleMode<CR>
 " Ctrl-w + e shall enable checking
 " Ctrl-w + f shall disable checking 
 

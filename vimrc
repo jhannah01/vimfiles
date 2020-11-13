@@ -46,13 +46,6 @@ set wildmenu        " wild char completion menu
 
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 autoindent smarttab colorcolumn=120
 
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-"let g:jedi#popup_on_dot = 0
-"let g:ycm_key_list_select_completion = []
-
 " status line
 set laststatus=2
 set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \ 
@@ -90,9 +83,9 @@ nmap <leader>/ :set hls!<CR>
 nnoremap <silent><leader>s :nohlsearch<CR>
 
 " Bash like keys for the command line
-cnoremap <C-A>  <Home>
-cnoremap <C-E>  <End>
-cnoremap <C-K>  <C-U>
+"cnoremap <C-A>  <Home>
+"cnoremap <C-E>  <End>
+"cnoremap <C-K>  <C-U>
 
 " ;p toggles paste mode
 nmap <leader>p :set paste!<BAR>set paste?<CR>
@@ -108,21 +101,21 @@ map <leader>[ :cp<CR>
 cmap cd. lcd %:p:h
 
 " Quickly resize windows use +/-
-map - <C-W>-
-map + <C-W>+
-map > <C-W>>
-map < <C-W><
+"map - <C-W>-
+"map + <C-W>+
+"map > <C-W>>
+"map < <C-W><
 
 " Allows all window commands in insert mode
-imap <C-w> <C-o><C-w>
+"imap <C-w> <C-o><C-w>
 
 " Loop to switch windows
 nmap <S-w> :wincmd w<CR>
 
 " new tab
-map <C-t><C-t> :tabnew .<CR>
+"map <C-t><C-t> :tabnew .<CR>
 " close tab
-map <C-t><C-w> :tabclose<CR> 
+"map <C-t><C-w> :tabclose<CR> 
 
 "---------
 "Functions
@@ -224,7 +217,7 @@ if exists('g:pymode_options_max_line_length')
     let g:pymode_lint               = 0 " Disable pylint
     let g:pymode_rope               = 0
     let g:pymode_rope_autoimport    = 0
-    let g:pymode_rope_autoimport_modules = ['os', 'os.path', 're', 'shutil', 'sys', 'datetime']
+    "let g:pymode_rope_autoimport_modules = ['os', 'os.path', 're', 'shutil', 'sys', 'datetime']
     let g:pymode_rope_autoimport_import_after_complete  = 0
     let g:pymode_options_max_line_length = 120
   
@@ -238,6 +231,15 @@ if exists('g:pymode_options_max_line_length')
     let g:pymode_doc_bind = "<C-S-d>"
 endif
 
+
+let g:pymode_options_max_line_length = 160
+
+"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:jedi#popup_on_dot = 0
+let g:ycm_key_list_select_completion = []
 
 "let g:pymode_lint_config = $HOME.'/.pylint.rc'
 
