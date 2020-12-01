@@ -291,7 +291,7 @@ map <C-\> :bel 8sp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 let g:BASH_GlobalTemplateFile = $HOME.'/.vim/bash-support/templates/Templates'
 
-if exists('g:pymode_options_max_line_length')
+"if exists('g:pymode_options_max_line_length')
     let g:pymode_options            = 1 " Set default python options
     let g:pymode_warnings           = 1 " Disable noisy warnings
     let g:pymode_folding            = 1 " Enable folding by default
@@ -310,7 +310,7 @@ if exists('g:pymode_options_max_line_length')
 
     " Override view python doc key shortcut to Ctrl-Shift-d
     let g:pymode_doc_bind = "<C-S-d>"
-endif
+"endif
 
 "inoremap <C-w> <C-\><C-o><ESC><C-w>
 "inoremap <C-w> <C-\><C-o>dB
@@ -331,3 +331,5 @@ let g:jedi#popup_on_dot = 0
 let g:ycm_key_list_select_completion = []
 
 source /opt/vim/vimrc-init.vim
+
+let g:ycm_confirm_extra_conf=0

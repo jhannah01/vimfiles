@@ -1,38 +1,74 @@
-" general 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'ycm-core/YouCompleteMe'
+" general
+""Bundle 'tpope/vim-fugitive'
+""Bundle 'tpope/vim-markdown'
+""Bundle 'ycm-core/YouCompleteMe'
 
 " for omnicomp
-Bundle 'scrooloose/syntastic'
-Bundle 'klen/python-mode'
+""Bundle 'scrooloose/syntastic'
+""Bundle 'klen/python-mode'
 
-Bundle 'tpope/vim-haml'
+""Bundle 'tpope/vim-haml'
 
 "--------------------
 " for javascript
 "--------------------
-Bundle 'pangloss/vim-javascript'
-Bundle 'itspriddle/vim-jquery'
+""Bundle 'pangloss/vim-javascript'
+""Bundle 'itspriddle/vim-jquery'
 
 " -------------------
 " for applescript
 " -------------------
-Bundle 'vim-scripts/applescript.vim'
+""Bundle 'vim-scripts/applescript.vim'
 
-"----Bundle
-Bundle 'xolox/vim-misc'
-Bundle 'hdima/python-syntax'
-Bundle 'ivanov/vim-ipython'
-Bundle 'vim-scripts/taglist.vim'
+"----""Bundle
+""Bundle 'xolox/vim-misc'
+""Bundle 'hdima/python-syntax'
+""Bundle 'ivanov/vim-ipython'
+""Bundle 'vim-scripts/taglist.vim'
 
 "-----Others
+""Bundle 'Shougo/vimshell.vim'
+""Bundle 'vim-scripts/bash-support.vim'
+""Bundle 'MarcWeber/vim-addon-local-vimrc'
+""Bundle 'altercation/vim-colors-solarized'
+""Bundle 'ninja/sky'
+""Bundle 'zeis/vim-kolor'
+""Bundle 'davidhalter/jedi-vim'
+""Bundle 'reedes/vim-wordchipper'
+""Bundle 'tpope/vim-surround'
+
+" General
+" -------
+Bundle 'tpope/vim-markdown'
+Bundle 'mbbill/undotree'
 Bundle 'Shougo/vimshell.vim'
-Bundle 'vim-scripts/bash-support.vim'
 Bundle 'MarcWeber/vim-addon-local-vimrc'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'ninja/sky'
+Bundle 'xolox/vim-misc'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'zeis/vim-kolor'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'reedes/vim-wordchipper'
-Bundle 'tpope/vim-surround'
+
+" Completion
+" ----------
+Bundle 'ycm-core/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+
+" Python
+" ------
+Bundle 'ivanov/vim-ipython'
+Bundle 'nvie/vim-flake8'
+Bundle 'hdima/python-syntax'
+Bundle 'python-mode/python-mode'
+"Bundle 'Integralist/vim-mypy'
+
+" Syntax
+" ------
+Bundle 'lepture/vim-jinja'
+Bundle 'glench/vim-jinja2-syntax'
+Bundle 'vim-scripts/bash-support.vim'
+Bundle 'JamshedVesuna/vim-markdown-preview'
+
+" Colors
+" ------
+Bundle 'altercation/vim-colors-solarized'
