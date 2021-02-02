@@ -319,7 +319,7 @@ endif
 
 " Works best:
 inoremap <C-w> <C-\><C-o>db
-inoremap <C-y> <C-\><C-o>dB
+inoremap <C-x> <C-\><C-o>dB
 
 "inoremap <expr> <C-w> wordchipper#chipWith('db')
 "inoremap <expr> <C-w> wordchipper#chipWith('dB')

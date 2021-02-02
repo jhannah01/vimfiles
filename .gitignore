@@ -4,4 +4,4 @@
 .*.swp
 *.*swo
 .local/
-bundle/
+/bundle/
