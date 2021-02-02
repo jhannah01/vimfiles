@@ -1,35 +1,12 @@
 " general 
-Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'dsawardekar/wordpress.vim'
 Bundle 'ycm-core/YouCompleteMe'
 
 " for omnicomp
-"Bundle 'Shougo/neocomplcache'
-"Bundle 'Shougo/neosnippet'
-"Bundle 'Shougo/neosnippet-snippets'
-Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'scrooloose/syntastic'
-
-" for php
-""Bundle 'stephpy/vim-php-cs-fixer'
-""Bundle 'arnaud-lb/vim-php-namespace'
-""Bundle 'shawncplus/phpcomplete.vim'
-""Bundle 'vim-scripts/PDV--phpDocumentor-for-Vim'
-""Bundle 'erikfercak/php-search-doc'
-""Bundle 'lucapette/vim-jquery-doc'
-
-" for python
 Bundle 'klen/python-mode'
 
-"--------------------
-" for html, haml, sass
-"--------------------
 Bundle 'tpope/vim-haml'
 
 "--------------------
@@ -47,7 +24,6 @@ Bundle 'vim-scripts/applescript.vim'
 Bundle 'xolox/vim-misc'
 Bundle 'hdima/python-syntax'
 Bundle 'ivanov/vim-ipython'
-Bundle 'mbbill/undotree'
 Bundle 'vim-scripts/taglist.vim'
 
 "-----Others
@@ -57,5 +33,5 @@ Bundle 'MarcWeber/vim-addon-local-vimrc'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ninja/sky'
 Bundle 'zeis/vim-kolor'
-Bundle 'tianon/vim-docker'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'reedes/vim-wordchipper'

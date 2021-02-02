@@ -31,7 +31,7 @@ set sw=4
 set tags=tags
 set expandtab
 set smarttab
-set smartindent 
+set smartindent
 set smartcase
 set hlsearch
 set magic
@@ -88,15 +88,15 @@ fun! HasPaste()
 endfun
 
 
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 " USEFUL SHORTCUTS
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 " set leader to ;
 let mapleader=";"
 let g:mapleader=";"
 
 " quick alias to leave vim
-nmap <leader>w :x<CR> 
+nmap <leader>w :x<CR>
 nmap <leader>q :q!<CR>
 
 "replace the current word in all opened buffers
@@ -115,7 +115,7 @@ cnoremap <C-K>  <C-U>
 nmap <leader>p :set paste!<BAR>set paste?<CR>
 
 " open the error console
-map <leader>er :bo cope<CR> 
+map <leader>er :bo cope<CR>
 " move to next error
 map <leader>] :cn<CR>
 " move to the prev error
@@ -131,23 +131,23 @@ map > <C-W>>
 map < <C-W><
 
 " Allows all window commands in insert mode
-imap <C-w> <C-o><C-w>
+"imap <C-w> <C-o><C-w>
 
 " Loop to switch windows
 nmap <S-w> :wincmd w<CR>
 
 " new tab
-map <C-t><C-t> :tabnew .<CR>
+"map <C-t><C-t> :tabnew .<CR>
 " close tab
-map <C-t><C-w> :tabclose<CR> 
+"map <C-t><C-w> :tabclose<CR>
 
-"--------------------------------------------------------------------------- 
-" Tip #382: Search for <cword> and replace with input() in all open buffers 
-"--------------------------------------------------------------------------- 
-fun! Replace() 
-  let s:word = input("Replace " . expand('<cword>') . " with:") 
-  :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge' 
-  :unlet! s:word 
+"---------------------------------------------------------------------------
+" Tip #382: Search for <cword> and replace with input() in all open buffers
+"---------------------------------------------------------------------------
+fun! Replace()
+  let s:word = input("Replace " . expand('<cword>') . " with:")
+  :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
+  :unlet! s:word
 endfun
 
 "---------------------------------------------
@@ -168,7 +168,7 @@ endif
 " --------------------------------
 " use w!! to write protected files
 " --------------------------------
-cmap w!! %!sudo tee > /dev/null % 
+cmap w!! %!sudo tee > /dev/null %
 
 " ---------------------
 " copy to system buffer
@@ -189,15 +189,15 @@ fun! IncludeGuard()
     call append(line("$"), "#endif /* " . guard . " */")
 endfun
 
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 " COLOR SCHEME OVERRIDE
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 hi StatusLine ctermfg=gray ctermbg=black
 hi StatusLineNC ctermfg=darkblue ctermbg=gray
 
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 " PLUGIN SETTINGS
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 
 " --- Syntastic
 nnoremap <silent> <F6> :SyntasticCheck<CR>
@@ -206,7 +206,7 @@ let g:syntastic_auto_loc_list = 1
 "let g:syntastic_auto_jump = 1
 
 " --- EasyMotion
-let g:EasyMotion_leader_key = '<Leader><Leader>'    " default is <Leader>w
+"let g:EasyMotion_leader_key = '<Leader><Leader>'    " default is <Leader>w
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
@@ -220,7 +220,7 @@ let g:neocomplcache_enable_smart_case = 1
 " Use camel case completion.
 let g:neocomplcache_enable_camel_case_completion = 1
 " Use underbar completion.
-let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_underbar_completion = 0
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length = 2
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
@@ -302,12 +302,12 @@ endfunction
 command! SyntasticDisableBuffer call SyntasticDisableBuffer()
 
 "let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': [] }
-noremap <C-w>e :SyntasticCheck<CR> 
-noremap <C-w>f :SyntasticToggleMode<CR>
+"noremap <C-w>e :SyntasticCheck<CR>
+"noremap <C-w>f :SyntasticToggleMode<CR>
 " Ctrl-w + e shall enable checking
-" Ctrl-w + f shall disable checking 
+" Ctrl-w + f shall disable checking
 
-" To disable warnings use: 
+" To disable warnings use:
 "let g:syntastic_quiet_messages={'level':'warnings'}
 
 let b:syntastic_mode='passive'

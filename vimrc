@@ -25,7 +25,7 @@ set ts=4
 set sw=4
 set expandtab
 set smarttab
-set smartindent 
+set smartindent
 set smartcase
 set hlsearch
 set magic
@@ -54,9 +54,9 @@ set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\
 set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
 
 " ignore these files while expanding wild chars
-set wildignore+=.svn,CVS,.git 
+set wildignore+=.svn,CVS,.git
 set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.lo,*.la,*.obj,*.pyc
-set wildignore+=*.exe,*.zip,*.jpg,*.png,*.gif,*.jpeg
+set wildignore+=*.exe,*.zip,*.jpg,*.png,*.gif,*.jpeg,.DS_Store
 
 " folding
 "set foldenable
@@ -64,15 +64,15 @@ set foldmethod=marker
 set foldlevel=0
 set foldcolumn=0
 
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 " USEFUL SHORTCUTS
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 " set leader to ;
 let mapleader=";"
 let g:mapleader=";"
 
 " quick alias to leave vim
-nmap <leader>w :x<CR> 
+nmap <leader>w :x<CR>
 nmap <leader>q :q!<CR>
 
 "replace the current word in all opened buffers
@@ -91,7 +91,7 @@ cnoremap <C-K>  <C-U>
 nmap <leader>p :set paste!<BAR>set paste?<CR>
 
 " open the error console
-map <leader>er :bo cope<CR> 
+map <leader>er :bo cope<CR>
 " move to next error
 map <leader>] :cn<CR>
 " move to the prev error
@@ -115,7 +115,7 @@ nmap <S-w> :wincmd w<CR>
 " new tab
 map <C-t><C-t> :tabnew .<CR>
 " close tab
-map <C-t><C-w> :tabclose<CR> 
+"map <C-t><C-w> :tabclose<CR>
 
 "---------
 "Functions
@@ -133,13 +133,13 @@ fun! HasPaste()
     endif
 endfun
 
-"--------------------------------------------------------------------------- 
-" Tip #382: Search for <cword> and replace with input() in all open buffers 
-"--------------------------------------------------------------------------- 
-fun! Replace() 
-  let s:word = input("Replace " . expand('<cword>') . " with:") 
-  :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge' 
-  :unlet! s:word 
+"---------------------------------------------------------------------------
+" Tip #382: Search for <cword> and replace with input() in all open buffers
+"---------------------------------------------------------------------------
+fun! Replace()
+  let s:word = input("Replace " . expand('<cword>') . " with:")
+  :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
+  :unlet! s:word
 endfun
 
 "---------------------------------------------
@@ -149,7 +149,6 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 " use syntax complete if nothing else available
 if has("autocmd") && exists("+omnifunc")
@@ -159,12 +158,6 @@ if has("autocmd") && exists("+omnifunc")
                 \ endif
 endif
 set cot-=preview    "disable doc preview in omnicomplete
-
-"---------------------------------------------
-" for PHP programming
-"---------------------------------------------
-autocmd FileType php set makeprg=php\ -l\ %
-autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
 
 "---------------------------------------------
 " for edit CSS
@@ -190,7 +183,7 @@ au BufNewFile,BufRead *.less set filetype=less
 "---------------------------------------------
 " use w!! to write protected files
 "---------------------------------------------
-cmap w!! %!sudo tee > /dev/null % 
+cmap w!! %!sudo tee > /dev/null %
 
 "---------------------------------------------
 " copy to system buffer
@@ -211,26 +204,21 @@ fun! IncludeGuard()
     call append(line("$"), "#endif /* " . guard . " */")
 endfun
 
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 " COLOR SCHEME OVERRIDE
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 hi StatusLine ctermfg=gray ctermbg=black
 hi StatusLineNC ctermfg=darkblue ctermbg=gray
 
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 " PLUGIN SETTINGS
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 
 " --- Syntastic
 nnoremap <silent> <F6> :SyntasticCheck<CR>
 nnoremap <leader>sy :SyntasticCheck<CR>
 let g:syntastic_auto_loc_list = 1
 "let g:syntastic_auto_jump = 1
-
-" --- EasyMotion
-let g:EasyMotion_leader_key = '<Leader><Leader>'    " default is <Leader>w
-hi link EasyMotionTarget ErrorMsg
-hi link EasyMotionShade  Comment
 
 " --- neocomplcache
 " Disable AutoComplPop.
@@ -290,23 +278,6 @@ let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
-" --- php-search-doc, vim-jquery-doc
-let g:php_search_doc_command = 'open'
-let g:php_search_doc_function_mapping='<Leader>pf'
-let g:php_search_doc_manual_mapping='<Leader>pm'
-let g:jquery_doc_command = 'open'
-let g:jquery_doc_mapping = '<Leader>jm'
-
-" --- vim-easytags
-nnoremap <leader>ut :UpdateTags!<CR>
-nnoremap <leader>ht :HighlightTags<CR>
-nnoremap <silent><leader>hh :let b:easytags_auto_highlight = 1<CR>
-nnoremap <silent><leader>nh :let b:easytags_auto_highlight = 0<CR>
-let g:easytags_dynamic_files = 1
-let g:easytags_resolve_links = 1
-" disable split by filetype, it seems is a bug!!
-"let g:easytags_by_filetype = '~/.vim/tmp'
-
 "---------------------------------------------
 " using ctags
 "---------------------------------------------
@@ -317,34 +288,6 @@ set tags=tags
 " http://stackoverflow.com/questions/563616/vim-and-ctags-tips-and-tricks
 "---------------------------------------------
 map <C-\> :bel 8sp <CR>:exec("tag ".expand("<cword>"))<CR>
-
-"--------------------
-" For JavaScriptLint
-" Ref: http://panweizeng.com/write-javascript-in-vim.html
-"--------------------
-"autocmd FileType javascript set makeprg=~/bin/jsl\ -nologo\ -nofilelisting\ -nosummary\ -nocontext\ -conf\ ~/bin/jsl.default.conf\ -process\ %
-"autocmd FileType javascript set errorformat=%f(%l):\ %m
-"autocmd FileType javascript inoremap <silent> <F9> <C-O>:make<CR>
-"autocmd FileType javascript map <silent> <F9> :make<CR>
-
-"--------------------
-" for using php-cs-fixer
-"--------------------
-nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
-nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
-
-"--------------------
-" insert php namespace
-"--------------------
-imap <buffer> <leader><Leader>u <C-O>:call PhpInsertUse()<CR>
-map <buffer> <leader><Leader>u :call PhpInsertUse()<CR>
-
-"--------------------
-" For phpDocumentor (pdv)
-"--------------------
-inoremap <leader>pd <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <leader>pd :call PhpDocSingle()<CR> 
-vnoremap <leader>pd :call PhpDocRange()<CR>  
 
 let g:BASH_GlobalTemplateFile = $HOME.'/.vim/bash-support/templates/Templates'
 
@@ -358,7 +301,7 @@ if exists('g:pymode_options_max_line_length')
     let g:pymode_rope_autoimport_modules = ['os', 'os.path', 're', 'shutil', 'sys', 'datetime']
     let g:pymode_rope_autoimport_import_after_complete  = 0
     let g:pymode_options_max_line_length = 120
-  
+
     " Override go-to.definition key shortcut to Ctrl-]
     let g:pymode_rope_goto_definition_bind = "<C-]>"
 
@@ -369,7 +312,22 @@ if exists('g:pymode_options_max_line_length')
     let g:pymode_doc_bind = "<C-S-d>"
 endif
 
+"inoremap <C-w> <C-\><C-o><ESC><C-w>
+"inoremap <C-w> <C-\><C-o>dB
+""inoremap <C-w> <C-\><C-o>daw
+"inoremap <C-w> <c-o>daw<c-w>
 
-"let g:pymode_lint_config = $HOME.'/.pylint.rc'
+" Works best:
+inoremap <C-w> <C-\><C-o>db
+inoremap <C-y> <C-\><C-o>dB
+
+"inoremap <expr> <C-w> wordchipper#chipWith('db')
+"inoremap <expr> <C-w> wordchipper#chipWith('dB')
+"inoremap <expr> <C-x> wordchipper#chipWith('db')
+
+let g:pymode_lint_config = $HOME.'/.pylint.rc'
+let g:AutoClosePreserveDotReg = 0
+let g:jedi#popup_on_dot = 0
+let g:ycm_key_list_select_completion = []
 
 source /opt/vim/vimrc-init.vim
