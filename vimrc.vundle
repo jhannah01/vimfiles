@@ -72,3 +72,7 @@ Bundle 'JamshedVesuna/vim-markdown-preview'
 " Colors
 " ------
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'junegunn/limelight.vim'
+Bundle 'junegunn/goyo.vim'
+"Bundle 'masukomi/vim-markdown-folding', { 'for': 'markdown' }
+Bundle 'Scuilion/markdown-drawer'

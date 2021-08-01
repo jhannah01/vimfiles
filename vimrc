@@ -330,6 +330,11 @@ let g:AutoClosePreserveDotReg = 0
 let g:jedi#popup_on_dot = 0
 let g:ycm_key_list_select_completion = []
 
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+
 source /opt/vim/vimrc-init.vim
+
+
+
 
 let g:ycm_confirm_extra_conf=0
