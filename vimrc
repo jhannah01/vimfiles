@@ -43,6 +43,8 @@ set showmode        " Show current mode
 set wildchar=<TAB>  " start wild expansion in the command line using <TAB>
 set wildmenu        " wild char completion menu
 
+let g:snipMate = { 'snippet_version' : 1 }
+
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 autoindent smarttab colorcolumn=120
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
@@ -107,7 +109,7 @@ map > <C-W>>
 map < <C-W><
 
 " Allows all window commands in insert mode
-imap <C-w> <C-o><C-w>
+""imap <C-w> <C-o><C-w>
 
 " Loop to switch windows
 nmap <S-w> :wincmd w<CR>
@@ -330,11 +332,24 @@ let g:AutoClosePreserveDotReg = 0
 let g:jedi#popup_on_dot = 0
 let g:ycm_key_list_select_completion = []
 
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 
 source /opt/vim/vimrc-init.vim
 
-
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+"map <ESC>[5D <C-Left>
+"map <ESC>[5C <C-Right>
+"map! <ESC>[5D <C-Left>
+"map! <ESC>[5C <C-Right>
 
 
 let g:ycm_confirm_extra_conf=0
