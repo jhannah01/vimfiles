@@ -54,4 +54,5 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'junegunn/limelight.vim'
 "Bundle 'masukomi/vim-markdown-folding', { 'for': 'markdown' }
 "Bundle 'Scuilion/markdown-drawer'
-Bundle 'numirias/semshi'
+"Bundle 'numirias/semshi'
+Bundle 'NLKNguyen/papercolor-theme'
